@@ -9,14 +9,14 @@ import {
 } from 'react';
 
 interface ScreenContextProps {
+  initScreen: string;
+  initProgressValue: number;
   children: ReactNode;
 }
 
 interface ScreenProps {
   name: string;
   component: ReactElement;
-  progress: number;
-  init?: boolean;
 }
 
 interface Context {
@@ -26,6 +26,8 @@ interface Context {
   setProgress: Dispatch<SetStateAction<number>>;
 }
 
+type ScreenSwitcher = (screen: string, progress: number) => void;
+
 export const context = createContext<Context>({
   screen: '',
   progress: 0,
@@ -33,9 +35,13 @@ export const context = createContext<Context>({
   setProgress: () => null,
 });
 
-export function ScreenContext({ children }: ScreenContextProps) {
-  const [screen, setScreen] = useState('');
-  const [progress, setProgress] = useState(0);
+export function ScreenContext({
+  children,
+  initScreen,
+  initProgressValue,
+}: ScreenContextProps) {
+  const [screen, setScreen] = useState(initScreen);
+  const [progress, setProgress] = useState(initProgressValue);
 
   return (
     <context.Provider value={{ screen, setScreen, progress, setProgress }}>
@@ -44,23 +50,21 @@ export function ScreenContext({ children }: ScreenContextProps) {
   );
 }
 
-export function Screen({ name, component, progress, init }: ScreenProps) {
-  const { screen, setScreen, setProgress } = useContext(context);
-  const [initialization, setInitialization] = useState(true);
-
-  if (init && initialization) {
-    setScreen(name);
-    setProgress(progress);
-  }
-
-  if (initialization) {
-    setInitialization(false);
-  }
+export function Screen({ name, component }: ScreenProps) {
+  const { screen } = useContext(context);
 
   if (screen === name) {
-    setProgress(progress);
     return component;
   }
 
   return null;
+}
+
+export function useScreenSwitcher(): ScreenSwitcher {
+  const { setScreen, setProgress } = useContext(context);
+
+  return (screen, progress) => {
+    setScreen(screen);
+    setProgress(progress);
+  };
 }

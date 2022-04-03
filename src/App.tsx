@@ -1,3 +1,12 @@
+import { Header } from './components/Header';
+import { Main } from './components/Main';
+import { ScreenContext } from './screens';
+
 export function App() {
-  return <h1>Hello world</h1>;
+  return (
+    <ScreenContext>
+      <Header />
+      <Main />
+    </ScreenContext>
+  );
 }

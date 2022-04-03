@@ -1,12 +1,15 @@
+import _imgGreeting from '../../assets/img/greeting.png';
+
 export function Greeting() {
   return (
-    <main className="OWMain">
-      <h2 className="OWMain-Title"></h2>
-      <h2 className="OWMain-Question"></h2>
-      <div className="OWMain-OptionContainer"></div>
-      <p className="OWMain-Description"></p>
-      <button className="OWMain-AddOption"></button>
-      <button className="OWMain-Button"></button>
-    </main>
+    <section className="OWMain OWMain_Gradient">
+      <img src={_imgGreeting} alt="Greeting!" className="OWMain-Image" />
+      <h2 className="OWMain-Title">Let’s find your perfect pair!</h2>
+      <p className="OWMain-Description">
+        Take the quiz to easily discover your perfect fit from thousands of
+        styles
+      </p>
+      <button className="OWMain-Button">Start Now</button>
+    </section>
   );
 }

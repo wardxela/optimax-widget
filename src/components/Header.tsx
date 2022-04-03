@@ -22,7 +22,7 @@ export function Header() {
       {screen === 'greeting' ? (
         <div className="OWHeader-Body">
           <img src={_imgLogo} alt="Optimax DEV" className="OWHeader-Logo" />
-          <button className="OWheader-Button" onClick={goNext}>
+          <button className="OWHeader-Button" onClick={goNext}>
             <img src={_imgRight} alt="Go" />
           </button>
         </div>

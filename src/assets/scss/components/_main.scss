@@ -1,0 +1,24 @@
+.OWMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 572px;
+  text-align: center;
+
+  &_Gradient {
+    background-image: linear-gradient(
+      180deg,
+      #e8f0f2 0%,
+      rgba(232, 240, 242, 0) 100%
+    );
+  }
+
+  &-Title {
+    margin: 0;
+    font-family: var(--p-font);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 129%;
+    color: #2196f3;
+  }
+}

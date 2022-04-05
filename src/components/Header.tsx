@@ -1,5 +1,6 @@
 import { MouseEvent, useContext } from 'react';
 import { context, useScreenSwitcher } from '../screens';
+import { usePrev } from '../hooks/abstract';
 import _imgRight from '../assets/img/right-arrow.svg';
 import _imgLeft from '../assets/img/left-arrow.svg';
 import _imgExit from '../assets/img/exit.svg';
@@ -10,8 +11,24 @@ export function Header() {
 
   const switchScreen = useScreenSwitcher();
 
+  const prevProgress = usePrev(progress);
+  const prevScreen = usePrev(screen);
+
+  // Button handlers
   const goNext = (event: MouseEvent<HTMLButtonElement>) => {
-    switchScreen('second', 2);
+    switchScreen('gender', 1);
+  };
+
+  const goBack = (event: MouseEvent<HTMLButtonElement>) => {
+    if (prevScreen === null || prevProgress === null) {
+      switchScreen('greeting', 0);
+    } else {
+      switchScreen(prevScreen, prevProgress);
+    }
+  };
+
+  const goToFirst = (event: MouseEvent<HTMLButtonElement>) => {
+    switchScreen('greeting', 0);
   };
 
   const maxProgressShift = 10;
@@ -29,13 +46,13 @@ export function Header() {
       ) : (
         <>
           <div className="OWHeader-Body">
-            <button className="OWHeader-Button">
+            <button className="OWHeader-Button" onClick={goBack}>
               <img src={_imgLeft} alt="Back" />
             </button>
-            <div className="OWHeader-Completed">
+            <div className="OWHeader-Statistics">
               {progress}/{maxProgressShift}
             </div>
-            <button className="OWHeader-Button">
+            <button className="OWHeader-Button" onClick={goToFirst}>
               <img src={_imgExit} alt="Exit" />
             </button>
           </div>

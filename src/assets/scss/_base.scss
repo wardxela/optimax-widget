@@ -1,4 +1,11 @@
 :root {
   --p-font: 'Open Sans', sans-serif;
-  --p-font: 'Roboto', sans-serif;
+  --s-font: 'Roboto', sans-serif;
+  // --p-anim:
+}
+
+#glasses-quiz-widget {
+  max-width: 375px;
+  margin: 0 auto;
+  overflow: hidden;
 }

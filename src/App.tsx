@@ -4,7 +4,7 @@ import { ScreenContext } from './screens';
 
 export function App() {
   return (
-    <ScreenContext initScreen="greeting" initProgressValue={1}>
+    <ScreenContext initScreen="greeting" initProgressValue={0}>
       <Header />
       <Main />
     </ScreenContext>

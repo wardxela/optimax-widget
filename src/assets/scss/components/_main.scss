@@ -1,8 +1,4 @@
 .OWMain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 572px;
   text-align: center;
 
   &_Gradient {
@@ -13,12 +9,62 @@
     );
   }
 
+  &-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 572px;
+    &_Common {
+      padding: 24px;
+    }
+  }
+
+  &-Image {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 48px;
+    user-select: none;
+  }
+
   &-Title {
-    margin: 0;
     font-family: var(--p-font);
     font-weight: 700;
     font-size: 24px;
     line-height: 129%;
     color: #2196f3;
+    margin: 0 0 20px 0;
+    animation: appear 0.3s ease 0s 1 normal forwards;
+  }
+
+  &-Description {
+    font-family: var(--p-font);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 174%;
+    color: #3a4850;
+    max-width: 272px;
+    margin: 0 0 25px 0;
+    opacity: 0;
+    animation: appear 0.3s ease 0.1s 1 normal forwards;
+  }
+
+  &-Button {
+    font-family: var(--s-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 116%;
+    color: #ffffff;
+    background: linear-gradient(270deg, #45c7fa 0%, #2196f3 100%);
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    border: none;
+    padding: 13px 26px;
+    min-width: 180px;
+    opacity: 0;
+    animation: appear 0.3s ease 0.2s 1 normal forwards;
+    user-select: none;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

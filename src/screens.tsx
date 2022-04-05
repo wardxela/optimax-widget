@@ -26,7 +26,7 @@ interface Context {
   setProgress: Dispatch<SetStateAction<number>>;
 }
 
-type ScreenSwitcher = (screen: string, progress: number) => void;
+type ScreenSwitcher = (screen: string, progress?: number) => void;
 
 export const context = createContext<Context>({
   screen: '',
@@ -65,6 +65,8 @@ export function useScreenSwitcher(): ScreenSwitcher {
 
   return (screen, progress) => {
     setScreen(screen);
-    setProgress(progress);
+    if (typeof progress !== 'undefined') {
+      setProgress(progress);
+    }
   };
 }

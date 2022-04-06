@@ -6,6 +6,12 @@ import _imgLeft from '../assets/img/left-arrow.svg';
 import _imgExit from '../assets/img/exit.svg';
 import _imgLogo from '../assets/img/Optimax.png';
 
+const maxProgressShift = 10;
+
+const getProgressShift = (progress: number): string => {
+  return `${(progress * 100) / maxProgressShift - 100}%`;
+};
+
 export function Header() {
   const { progress, screen } = useContext(context);
 
@@ -30,9 +36,6 @@ export function Header() {
   const goToFirst = (event: MouseEvent<HTMLButtonElement>) => {
     switchScreen('greeting', 0);
   };
-
-  const maxProgressShift = 10;
-  const progressShift = `${(progress * 100) / maxProgressShift - 100}%`;
 
   return (
     <header className="OWHeader">
@@ -59,7 +62,7 @@ export function Header() {
           <div className="OWHeader-Progress">
             <span
               className="OWHeader-ProgressCompleted"
-              style={{ transform: `translateX(${progressShift})` }}
+              style={{ transform: `translateX(${getProgressShift(progress)})` }}
             ></span>
           </div>
         </>

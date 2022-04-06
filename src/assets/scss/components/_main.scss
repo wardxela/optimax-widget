@@ -24,6 +24,7 @@
     margin-top: 40px;
     margin-bottom: 48px;
     user-select: none;
+    animation: appear 0.3s ease 0s 1 normal forwards;
   }
 
   &-Title {
@@ -33,7 +34,15 @@
     line-height: 129%;
     color: #2196f3;
     margin: 0 0 20px 0;
-    animation: appear 0.3s ease 0s 1 normal forwards;
+    animation: appear 0.3s ease 0.1s 1 normal forwards;
+  }
+
+  &-Title-2 {
+    font-family: var(--p-font);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 145%;
+    color: #0f0f0f;
   }
 
   &-Description {
@@ -45,7 +54,7 @@
     max-width: 272px;
     margin: 0 0 25px 0;
     opacity: 0;
-    animation: appear 0.3s ease 0.1s 1 normal forwards;
+    animation: appear 0.3s ease 0.2s 1 normal forwards;
   }
 
   &-Button {
@@ -61,10 +70,29 @@
     padding: 13px 26px;
     min-width: 180px;
     opacity: 0;
-    animation: appear 0.3s ease 0.2s 1 normal forwards;
+    animation: appear 0.3s ease 0.3s 1 normal forwards;
     user-select: none;
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  &-SecondButton {
+    font-family: var(--p-font);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(22px / 16px);
+    text-decoration-line: underline;
+    color: #3a4850;
+    border: none;
+    background: transparent;
+    margin-top: auto;
+    cursor: pointer;
+    transition: 0.3s ease;
+    opacity: 0;
+    animation: appear 0.3s ease 0.1s 1 normal forwards;
+    &:hover {
+      color: #67818f;
     }
   }
 }

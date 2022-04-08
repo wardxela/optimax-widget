@@ -50,13 +50,13 @@ export function Header() {
         <>
           <div className="OWHeader-Body">
             <button className="OWHeader-Button" onClick={goBack}>
-              <img src={_imgLeft} alt="Back" />
+              <img className="OWHheader-ButtonImg" src={_imgLeft} alt="Back" />
             </button>
             <div className="OWHeader-Statistics">
               {progress}/{maxProgressShift}
             </div>
             <button className="OWHeader-Button" onClick={goToFirst}>
-              <img src={_imgExit} alt="Exit" />
+              <img className="OWHheader-ButtonImg" src={_imgExit} alt="Exit" />
             </button>
           </div>
           <div className="OWHeader-Progress">

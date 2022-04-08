@@ -54,12 +54,16 @@
     background-color: transparent;
     cursor: pointer;
     border: none;
-    transition: 0.5s cubic-bezier(0.01, 0.78, 0.27, 1.02);
+    transition: background-color 0.5s cubic-bezier(0.01, 0.78, 0.27, 1.02);
     user-select: none;
     animation: btn-appear 0.3s ease 0s 1 normal forwards;
+    border-radius: 5px;
     &:hover {
       background-color: #f4f4f4;
-      border-radius: 5px;
+    }
+
+    &Img {
+      max-width: 100%;
     }
   }
 }

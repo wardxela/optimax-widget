@@ -1,0 +1,32 @@
+.OWOption {
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(231, 235, 237, 0.80141);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  cursor: pointer;
+
+  &_middle {
+    width: min(274px, 100%);
+  }
+
+  &-Column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-Image {
+    display: block;
+    max-width: 100%;
+  }
+
+  &-Desc {
+    font-family: var(--p-font);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25 / 18 * 100%;
+    color: #425a60;
+  }
+}

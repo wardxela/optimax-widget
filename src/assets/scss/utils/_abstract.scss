@@ -2,7 +2,22 @@
   &-mt-26 {
     margin-top: 26px;
   }
+
+  &-mb-15 {
+    margin-bottom: 15px;
+  }
+
   &-mb-32 {
     margin-bottom: 32px;
+  }
+
+  &-p-30 {
+    padding: 30px;
+  }
+}
+
+@for $shift from 0 to 5 {
+  .OWHelper-appear_#{$shift} {
+    animation: appear 0.3s ease 0.1s * $shift 1 normal both;
   }
 }

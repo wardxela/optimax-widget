@@ -1,12 +1,15 @@
+import { StrictMode } from 'react';
 import { Header } from './components/Header';
 import { Main } from './components/Main';
-import { ScreenContext } from './screens';
+import { ScreenContext } from './screens/core';
 
 export function App() {
   return (
-    <ScreenContext initScreen="greeting" initProgressValue={0}>
-      <Header />
-      <Main />
-    </ScreenContext>
+    <StrictMode>
+      <ScreenContext>
+        <Header />
+        <Main />
+      </ScreenContext>
+    </StrictMode>
   );
 }

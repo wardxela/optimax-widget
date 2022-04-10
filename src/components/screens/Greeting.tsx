@@ -1,12 +1,12 @@
 import { MouseEvent } from 'react';
 import _imgGreeting from '../../assets/img/greeting.png';
-import { useScreenSwitcher } from '../../screens';
+import { useNextScreen } from '../../screens/hooks';
 
 export function Greeting() {
-  const switchScreen = useScreenSwitcher();
+  const next = useNextScreen();
 
   const goNext = (event: MouseEvent<HTMLButtonElement>) => {
-    switchScreen('gender', 1);
+    next();
   };
 
   return (

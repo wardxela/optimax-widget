@@ -1,45 +1,44 @@
-import { MouseEvent, useContext } from 'react';
-import { context, useScreenSwitcher } from '../screens';
-import { usePrev } from '../hooks/abstract';
+import { MouseEvent } from 'react';
+import {
+  useAmountOfScreens,
+  useCurrentScreen,
+  useNextScreen,
+  usePrevScreen,
+  useFirstScreen,
+} from '../screens/hooks';
 import _imgRight from '../assets/img/right-arrow.svg';
 import _imgLeft from '../assets/img/left-arrow.svg';
 import _imgExit from '../assets/img/exit.svg';
 import _imgLogo from '../assets/img/Optimax.png';
 
-const maxProgressShift = 10;
-
-const getProgressShift = (progress: number): string => {
-  return `${(progress * 100) / maxProgressShift - 100}%`;
+const getProgress = (current: number, max: number): string => {
+  return `${(current * 100) / max - 100}%`;
 };
 
 export function Header() {
-  const { progress, screen } = useContext(context);
+  const screen = useCurrentScreen();
+  const amountOfScreens = useAmountOfScreens();
 
-  const switchScreen = useScreenSwitcher();
-
-  const prevProgress = usePrev(progress);
-  const prevScreen = usePrev(screen);
+  const next = useNextScreen();
+  const prev = usePrevScreen();
+  const first = useFirstScreen();
 
   // Button handlers
   const goNext = (event: MouseEvent<HTMLButtonElement>) => {
-    switchScreen('gender', 1);
+    next();
   };
 
   const goBack = (event: MouseEvent<HTMLButtonElement>) => {
-    if (prevScreen === null || prevProgress === null) {
-      switchScreen('greeting', 0);
-    } else {
-      switchScreen(prevScreen, prevProgress);
-    }
+    prev();
   };
 
   const goToFirst = (event: MouseEvent<HTMLButtonElement>) => {
-    switchScreen('greeting', 0);
+    first();
   };
 
   return (
     <header className="OWHeader">
-      {screen === 'greeting' ? (
+      {screen === 0 ? (
         <div className="OWHeader-Body">
           <img src={_imgLogo} alt="Optimax DEV" className="OWHeader-Logo" />
           <button className="OWHeader-Button" onClick={goNext}>
@@ -53,7 +52,7 @@ export function Header() {
               <img className="OWHheader-ButtonImg" src={_imgLeft} alt="Back" />
             </button>
             <div className="OWHeader-Statistics">
-              {progress}/{maxProgressShift}
+              {screen}/{amountOfScreens}
             </div>
             <button className="OWHeader-Button" onClick={goToFirst}>
               <img className="OWHheader-ButtonImg" src={_imgExit} alt="Exit" />
@@ -62,7 +61,12 @@ export function Header() {
           <div className="OWHeader-Progress">
             <span
               className="OWHeader-ProgressCompleted"
-              style={{ transform: `translateX(${getProgressShift(progress)})` }}
+              style={{
+                transform: `translateX(${getProgress(
+                  screen,
+                  amountOfScreens
+                )})`,
+              }}
             ></span>
           </div>
         </>

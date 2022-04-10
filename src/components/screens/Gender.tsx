@@ -1,12 +1,12 @@
+import { useNextScreen } from '../../screens/hooks';
 import _imgMan from '../../assets/img/man.png';
 import _imgWoman from '../../assets/img/woman.png';
-import { useScreenSwitcher } from '../../screens';
 
 export function Gender() {
-  const switchScreen = useScreenSwitcher();
+  const next = useNextScreen();
 
   const goNext = () => {
-    switchScreen('glasses-type', 2);
+    next();
   };
 
   return (

@@ -1,4 +1,4 @@
-import { Screens } from '../screens/core';
+import { Screens } from '../screens';
 import { Gender } from './screens/Gender';
 import { Greeting } from './screens/Greeting';
 import { GlassesType } from './screens/GlassesType';

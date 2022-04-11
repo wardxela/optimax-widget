@@ -1,15 +1,19 @@
 import { StrictMode } from 'react';
 import { Header } from './components/Header';
 import { Main } from './components/Main';
-import { ScreenContext } from './screens/core';
+import { State } from './context';
 
-export function App() {
+interface AppProps {
+  source: string;
+}
+
+export function App({ source }: AppProps) {
   return (
     <StrictMode>
-      <ScreenContext>
+      <State source={source}>
         <Header />
         <Main />
-      </ScreenContext>
+      </State>
     </StrictMode>
   );
 }

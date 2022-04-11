@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { context } from './core';
+import { context } from '.';
 
 export function useCurrentScreen(): number {
   const { current } = useContext(context);

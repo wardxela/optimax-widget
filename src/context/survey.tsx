@@ -1,5 +1,18 @@
 import { createContext, useState } from 'react';
-import { ISurveyContext, SurveyContextProps } from './types.d';
+import {
+  BlueLight,
+  Brand,
+  EyeWearType,
+  FaceShape,
+  FacialFeatures,
+  FrameSize,
+  Gender,
+  ISurveyContext,
+  LensType,
+  Shade,
+  Shape,
+  SurveyContextProps,
+} from './types.d';
 
 export const context = createContext<ISurveyContext>({
   gender: null,
@@ -13,20 +26,30 @@ export const context = createContext<ISurveyContext>({
   shape: [],
   brand: [],
 
+  setGender: () => {},
+  setEyeWearType: () => {},
+  setLensType: () => {},
+  setFrameSize: () => {},
+  setBlueLight: () => {},
+  setShade: () => {},
+  setFaceShape: () => {},
+  setFacialFeatures: () => {},
+  setShape: () => {},
+  setBrand: () => {},
   getDestinationURL: () => '',
 });
 
 export function SurveyContext({ children, source }: SurveyContextProps) {
-  const [gender, setGender] = useState(null);
-  const [eyeWearType, setEyeWearType] = useState(null);
-  const [lensType, setLensType] = useState(null);
-  const [frameSize, setFrameSize] = useState(null);
-  const [blueLight, setBlueLight] = useState(null);
-  const [shade, setShade] = useState(null);
-  const [faceShape, setFaceShape] = useState(null);
-  const [facialFeatures, setFacialFeatures] = useState(null);
-  const [shape, setShape] = useState([]);
-  const [brand, setBrand] = useState([]);
+  const [gender, setGender] = useState<Gender>(null);
+  const [eyeWearType, setEyeWearType] = useState<EyeWearType>(null);
+  const [lensType, setLensType] = useState<LensType>(null);
+  const [frameSize, setFrameSize] = useState<FrameSize>(null);
+  const [blueLight, setBlueLight] = useState<BlueLight>(null);
+  const [shade, setShade] = useState<Shade>(null);
+  const [faceShape, setFaceShape] = useState<FaceShape>(null);
+  const [facialFeatures, setFacialFeatures] = useState<FacialFeatures>(null);
+  const [shape, setShape] = useState<Shape>([]);
+  const [brand, setBrand] = useState<Brand>([]);
 
   const getDestinationURL = () => {
     try {
@@ -40,6 +63,7 @@ export function SurveyContext({ children, source }: SurveyContextProps) {
   return (
     <context.Provider
       value={{
+        // State
         gender,
         eyeWearType,
         lensType,
@@ -50,6 +74,20 @@ export function SurveyContext({ children, source }: SurveyContextProps) {
         facialFeatures,
         shape,
         brand,
+
+        // Setters
+
+        setGender,
+        setEyeWearType,
+        setLensType,
+        setFrameSize,
+        setBlueLight,
+        setShade,
+        setFaceShape,
+        setFacialFeatures,
+        setShape,
+        setBrand,
+
         getDestinationURL,
       }}
     >

@@ -2,7 +2,7 @@ import _imgSunglasses from '../../assets/img/sunglasses.png';
 import _imgEyeglasses from '../../assets/img/eyeglasses.png';
 import { useNextScreen } from '../../screens/hooks';
 
-export function GlassesType() {
+export function EyeWearType() {
   const next = useNextScreen();
 
   const goNext = () => {

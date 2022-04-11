@@ -1,12 +1,20 @@
+import { useContext } from 'react';
+import { context as surveyContext } from '../../context/survey';
 import { useNextScreen } from '../../screens/hooks';
 import _imgMan from '../../assets/img/man.png';
 import _imgWoman from '../../assets/img/woman.png';
+import { Gender as GenderType } from '../../context/types.d';
 
 export function Gender() {
+  const { setGender } = useContext(surveyContext);
+
   const next = useNextScreen();
 
-  const goNext = () => {
-    next();
+  const handle = (option: GenderType) => {
+    return () => {
+      setGender(option);
+      next();
+    };
   };
 
   return (
@@ -18,7 +26,7 @@ export function Gender() {
         <div className="OWMain-Options OWMain-Options_gap14">
           <button
             className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_1"
-            onClick={goNext}
+            onClick={handle(5)}
           >
             <div className="OWOption-Column">
               <img
@@ -31,7 +39,7 @@ export function Gender() {
           </button>
           <button
             className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_2"
-            onClick={goNext}
+            onClick={handle(4)}
           >
             <div className="OWOption-Column">
               <img
@@ -45,7 +53,7 @@ export function Gender() {
         </div>
         <button
           className="OWMain-SecondButton OWHelper-appear_3"
-          onClick={goNext}
+          onClick={handle(null)}
         >
           I'd like to see both
         </button>

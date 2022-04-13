@@ -1,4 +1,4 @@
-import _imgLike from '../../assets/img/like.png';
+import _imgLike from '../assets/img/like.png';
 
 interface LoaderProps {
   text: string;

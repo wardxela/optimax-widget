@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import { context } from '../../context/survey';
 import { GenderEnum } from '../../context/options';
-import { useNextScreen } from '../../screens/hooks';
+import { useSwitchToNext } from '../../screens/hooks';
 import _imgMenSunglasses from '../../assets/img/men-sunglasses.png';
 import _imgMenEyeglasses from '../../assets/img/men-eyeglasses.png';
 import _imgWomenSunglasses from '../../assets/img/women-sunglasses.png';
 import _imgWomenEyeglasses from '../../assets/img/women-eyeglasses.png';
 
 export function EyeWearType() {
-  const next = useNextScreen();
+  const next = useSwitchToNext();
   const { gender } = useContext(context);
 
   const goNext = () => {

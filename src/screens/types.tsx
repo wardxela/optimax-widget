@@ -10,6 +10,7 @@ export interface ScreensProps {
 
 export interface IScreenContext {
   current: number;
+  prev: number | null;
   amount: number;
   setCurrent: Dispatch<SetStateAction<number>>;
   setAmount: Dispatch<SetStateAction<number>>;

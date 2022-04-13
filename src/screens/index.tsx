@@ -1,8 +1,10 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 import { IScreenContext, ScreenContextProps, ScreensProps } from './types';
+import { usePrev } from '../hooks/usePrev';
 
 export const context = createContext<IScreenContext>({
   current: 0,
+  prev: null,
   amount: 0,
   setCurrent: () => {},
   setAmount: () => {},
@@ -11,9 +13,10 @@ export const context = createContext<IScreenContext>({
 export function ScreenContext({ children }: ScreenContextProps) {
   const [current, setCurrent] = useState(0);
   const [amount, setAmount] = useState(0);
+  const prev = usePrev(current);
 
   return (
-    <context.Provider value={{ current, amount, setCurrent, setAmount }}>
+    <context.Provider value={{ current, prev, amount, setCurrent, setAmount }}>
       {children}
     </context.Provider>
   );

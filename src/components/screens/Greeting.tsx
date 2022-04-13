@@ -1,8 +1,8 @@
-import { useNextScreen } from '../../screens/hooks';
+import { useSwitchToNext } from '../../screens/hooks';
 import _imgGreeting from '../../assets/img/greeting.png';
 
 export function Greeting() {
-  const next = useNextScreen();
+  const next = useSwitchToNext();
 
   const goNext = () => {
     next();

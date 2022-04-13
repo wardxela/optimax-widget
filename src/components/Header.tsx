@@ -2,9 +2,9 @@ import { MouseEvent } from 'react';
 import {
   useAmountOfScreens,
   useCurrentScreen,
-  useNextScreen,
-  usePrevScreen,
-  useFirstScreen,
+  useSwitchToNext,
+  useSwitchToPrev,
+  useSwitchToFirst,
 } from '../screens/hooks';
 import _imgRight from '../assets/img/right-arrow.svg';
 import _imgLeft from '../assets/img/left-arrow.svg';
@@ -19,9 +19,9 @@ export function Header() {
   const screen = useCurrentScreen();
   const amountOfScreens = useAmountOfScreens() - 1;
 
-  const next = useNextScreen();
-  const prev = usePrevScreen();
-  const first = useFirstScreen();
+  const next = useSwitchToNext();
+  const prev = useSwitchToPrev();
+  const first = useSwitchToFirst();
 
   // Button handlers
   const goNext = (event: MouseEvent<HTMLButtonElement>) => {

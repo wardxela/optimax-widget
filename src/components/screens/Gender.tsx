@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { context as surveyContext } from '../../context/survey';
-import { useNextScreen } from '../../screens/hooks';
+import { useSwitchToNext } from '../../screens/hooks';
 import _imgMan from '../../assets/img/man.png';
 import _imgWoman from '../../assets/img/woman.png';
 import { Gender as GenderType } from '../../context/types';
@@ -9,7 +9,7 @@ import { GenderEnum } from '../../context/options';
 export function Gender() {
   const { setGender } = useContext(surveyContext);
 
-  const next = useNextScreen();
+  const next = useSwitchToNext();
 
   const handle = (option: GenderType) => {
     return () => {

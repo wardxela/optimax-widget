@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { context } from '.';
 
 export function useCurrentScreen(): number {
@@ -13,7 +13,24 @@ export function useAmountOfScreens(): number {
   return amount;
 }
 
-export function useNextScreen() {
+export function useWaiting(): boolean {
+  const { prev, current } = useContext(context);
+  const [isWaiting, setIsWaiting] = useState<boolean>(
+    typeof prev === 'number' && prev < current
+  );
+
+  useEffect(() => {
+    if (isWaiting) {
+      setTimeout(() => {
+        setIsWaiting(false);
+      }, 2000);
+    }
+  }, [isWaiting]);
+
+  return isWaiting;
+}
+
+export function useSwitchToNext() {
   const { setCurrent } = useContext(context);
 
   return () => {
@@ -23,7 +40,7 @@ export function useNextScreen() {
   };
 }
 
-export function usePrevScreen() {
+export function useSwitchToPrev() {
   const { setCurrent } = useContext(context);
 
   return () => {
@@ -33,7 +50,7 @@ export function usePrevScreen() {
   };
 }
 
-export function useFirstScreen() {
+export function useSwitchToFirst() {
   const { setCurrent } = useContext(context);
 
   return () => {

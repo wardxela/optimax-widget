@@ -12,7 +12,7 @@ import {
   Shade,
   Shape,
   SurveyContextProps,
-} from './types.d';
+} from './types';
 
 export const context = createContext<ISurveyContext>({
   gender: null,
@@ -76,7 +76,6 @@ export function SurveyContext({ children, source }: SurveyContextProps) {
         brand,
 
         // Setters
-
         setGender,
         setEyeWearType,
         setLensType,

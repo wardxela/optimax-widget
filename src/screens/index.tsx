@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, useEffect } from 'react';
-import { IScreenContext, ScreenContextProps, ScreensProps } from './types.d';
+import { IScreenContext, ScreenContextProps, ScreensProps } from './types';
 
 export const context = createContext<IScreenContext>({
   current: 0,

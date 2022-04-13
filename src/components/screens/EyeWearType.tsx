@@ -1,9 +1,15 @@
-import _imgSunglasses from '../../assets/img/sunglasses.png';
-import _imgEyeglasses from '../../assets/img/eyeglasses.png';
 import { useNextScreen } from '../../screens/hooks';
+import _imgMenSunglasses from '../../assets/img/men-sunglasses.png';
+import _imgMenEyeglasses from '../../assets/img/men-eyeglasses.png';
+import _imgWomenSunglasses from '../../assets/img/women-sunglasses.png';
+import _imgWomenEyeglasses from '../../assets/img/women-eyeglasses.png';
+import { useContext } from 'react';
+import { context } from '../../context/survey';
+import { GenderEnum } from '../../context/options';
 
 export function EyeWearType() {
   const next = useNextScreen();
+  const { gender } = useContext(context);
 
   const goNext = () => {
     next();
@@ -22,7 +28,11 @@ export function EyeWearType() {
           >
             <div className="OWOption-Column">
               <img
-                src={_imgEyeglasses}
+                src={
+                  gender === GenderEnum.Women
+                    ? _imgWomenEyeglasses
+                    : _imgMenEyeglasses
+                }
                 alt="Eyeglasses"
                 className="OWOption-Image OWHelper-mb-15"
               />
@@ -35,7 +45,11 @@ export function EyeWearType() {
           >
             <div className="OWOption-Column">
               <img
-                src={_imgSunglasses}
+                src={
+                  gender === GenderEnum.Women
+                    ? _imgWomenSunglasses
+                    : _imgMenSunglasses
+                }
                 alt="Sunglasses"
                 className="OWOption-Image OWHelper-mb-15"
               />

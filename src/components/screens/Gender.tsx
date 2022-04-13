@@ -3,7 +3,8 @@ import { context as surveyContext } from '../../context/survey';
 import { useNextScreen } from '../../screens/hooks';
 import _imgMan from '../../assets/img/man.png';
 import _imgWoman from '../../assets/img/woman.png';
-import { Gender as GenderType } from '../../context/types.d';
+import { Gender as GenderType } from '../../context/types';
+import { GenderEnum } from '../../context/options';
 
 export function Gender() {
   const { setGender } = useContext(surveyContext);
@@ -26,7 +27,7 @@ export function Gender() {
         <div className="OWMain-Options OWMain-Options_gap14">
           <button
             className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_1"
-            onClick={handle(5)}
+            onClick={handle(GenderEnum.Women)}
           >
             <div className="OWOption-Column">
               <img
@@ -39,7 +40,7 @@ export function Gender() {
           </button>
           <button
             className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_2"
-            onClick={handle(4)}
+            onClick={handle(GenderEnum.Men)}
           >
             <div className="OWOption-Column">
               <img

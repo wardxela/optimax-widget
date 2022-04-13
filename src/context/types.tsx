@@ -1,13 +1,22 @@
 import { Dispatch, ReactNode, SetStateAction } from 'react';
+import {
+  EyeWearTypeEnum,
+  FaceShapeEnum,
+  FacialFeaturesEnum,
+  FrameSizeEnum,
+  GenderEnum,
+  LensTypeEnum,
+  ShadeEnum,
+} from './options';
 
-export type Gender = 4 | 5 | null;
-export type EyeWearType = 210 | 211 | null;
-export type LensType = 6 | 7 | null;
-export type FrameSize = 68 | 67 | 66 | null;
+export type Gender = GenderEnum | null;
+export type EyeWearType = EyeWearTypeEnum | null;
+export type LensType = LensTypeEnum | null;
+export type FrameSize = FrameSizeEnum | null;
 export type BlueLight = boolean | null;
-export type Shade = 'dark' | 'light' | 'transition' | null;
-export type FaceShape = 'long' | 'round' | 'between' | null;
-export type FacialFeatures = 'sharp' | 'rounded' | 'between' | null;
+export type Shade = ShadeEnum | null;
+export type FaceShape = FaceShapeEnum | null;
+export type FacialFeatures = FacialFeaturesEnum | null;
 export type Shape = string[];
 export type Brand = string[];
 

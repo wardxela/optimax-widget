@@ -1,11 +1,11 @@
+import { useContext } from 'react';
+import { context } from '../../context/survey';
+import { GenderEnum } from '../../context/options';
 import { useNextScreen } from '../../screens/hooks';
 import _imgMenSunglasses from '../../assets/img/men-sunglasses.png';
 import _imgMenEyeglasses from '../../assets/img/men-eyeglasses.png';
 import _imgWomenSunglasses from '../../assets/img/women-sunglasses.png';
 import _imgWomenEyeglasses from '../../assets/img/women-eyeglasses.png';
-import { useContext } from 'react';
-import { context } from '../../context/survey';
-import { GenderEnum } from '../../context/options';
 
 export function EyeWearType() {
   const next = useNextScreen();
@@ -18,12 +18,12 @@ export function EyeWearType() {
   return (
     <section className="OWMain OWMain_Common">
       <div className="OWMain-Container OWMain-Container_Common">
-        <h2 className="OWMain-Title-2 OWHelper-appear_0 OWHelper-mt-26 OWHelper-mb-32">
+        <h2 className="OWMain-Title-2 OWHelper-appear_0 OWHelper-mt-26 OWHelper-mb-32 OWHelper-maw-243">
           What type of glasses are you looking for?
         </h2>
         <div className="OWMain-Options OWMain-Options_gap14">
           <button
-            className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_1"
+            className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_1"
             onClick={goNext}
           >
             <div className="OWOption-Column">
@@ -40,7 +40,7 @@ export function EyeWearType() {
             </div>
           </button>
           <button
-            className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_2"
+            className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_2"
             onClick={goNext}
           >
             <div className="OWOption-Column">

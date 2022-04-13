@@ -17,7 +17,7 @@ const getProgress = (current: number, max: number): string => {
 
 export function Header() {
   const screen = useCurrentScreen();
-  const amountOfScreens = useAmountOfScreens();
+  const amountOfScreens = useAmountOfScreens() - 1;
 
   const next = useNextScreen();
   const prev = usePrevScreen();

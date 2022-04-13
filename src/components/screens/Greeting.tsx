@@ -1,11 +1,10 @@
-import { MouseEvent } from 'react';
 import { useNextScreen } from '../../screens/hooks';
 import _imgGreeting from '../../assets/img/greeting.png';
 
 export function Greeting() {
   const next = useNextScreen();
 
-  const goNext = (event: MouseEvent<HTMLButtonElement>) => {
+  const goNext = () => {
     next();
   };
 
@@ -17,7 +16,7 @@ export function Greeting() {
           alt="Greeting!"
           className="OWMain-Image OWHelper-appear_0"
         />
-        <h2 className="OWMain-Title OWHelper-appear_0">
+        <h2 className="OWMain-Title OWHelper-mb-20 OWHelper-appear_0">
           Let’s find your perfect pair!
         </h2>
         <p className="OWMain-Description OWHelper-appear_1">

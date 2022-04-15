@@ -21,9 +21,13 @@ export function useTimeoutBetweenScreens(): boolean {
 
   useEffect(() => {
     if (isWaiting) {
-      setTimeout(() => {
+      let timeoutId = setTimeout(() => {
         setIsWaiting(false);
       }, 2000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
     }
   }, [isWaiting]);
 

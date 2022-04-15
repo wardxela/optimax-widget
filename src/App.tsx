@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
-import { Header } from './components/Header';
-import { Main } from './components/Main';
-import { State } from './context';
+import { Header, Main } from 'components';
+import { State } from 'context';
 
 interface AppProps {
   source: string;

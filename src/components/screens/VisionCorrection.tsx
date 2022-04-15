@@ -1,12 +1,12 @@
-import { useWaiting } from '../../screens/hooks';
+import { useTimeoutBetweenScreens } from 'services/screens';
 import { Loader } from '../Loader';
 
 export function VisionCorrection() {
-  const isWaiting = useWaiting();
+  const isWaiting = useTimeoutBetweenScreens();
 
   return isWaiting ? (
     <Loader text="Let's get to know you!" />
   ) : (
-    <>Waiting is completed</>
+    <>Something...</>
   );
 }

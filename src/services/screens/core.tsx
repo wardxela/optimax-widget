@@ -1,6 +1,6 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 import { IScreenContext, ScreenContextProps, ScreensProps } from './types';
-import { usePrev } from '../hooks/usePrev';
+import { usePrev } from 'hooks/usePrev';
 
 export const context = createContext<IScreenContext>({
   current: 0,

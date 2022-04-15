@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { context } from '.';
+import { context } from './core';
 
 export function useCurrentScreen(): number {
   const { current } = useContext(context);
@@ -13,7 +13,7 @@ export function useAmountOfScreens(): number {
   return amount;
 }
 
-export function useWaiting(): boolean {
+export function useTimeoutBetweenScreens(): boolean {
   const { prev, current } = useContext(context);
   const [isWaiting, setIsWaiting] = useState<boolean>(
     typeof prev === 'number' && prev < current

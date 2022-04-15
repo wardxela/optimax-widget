@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ScreenContext } from '../screens';
+import { ScreenContext } from 'services/screens';
 import { SurveyContext } from './survey';
 
 interface StateProps {

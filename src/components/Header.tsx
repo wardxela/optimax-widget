@@ -5,11 +5,11 @@ import {
   useSwitchToNext,
   useSwitchToPrev,
   useSwitchToFirst,
-} from '../screens/hooks';
-import _imgRight from '../assets/img/right-arrow.svg';
-import _imgLeft from '../assets/img/left-arrow.svg';
-import _imgExit from '../assets/img/exit.svg';
-import _imgLogo from '../assets/img/Optimax.png';
+} from 'services/screens';
+import _imgRight from 'assets/img/right-arrow.svg';
+import _imgLeft from 'assets/img/left-arrow.svg';
+import _imgExit from 'assets/img/exit.svg';
+import _imgLogo from 'assets/img/Optimax.png';
 
 const getProgress = (current: number, max: number): string => {
   return `${(current * 100) / max - 100}%`;

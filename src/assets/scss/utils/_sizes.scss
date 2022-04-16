@@ -23,7 +23,13 @@
 }
 
 .OWWidth {
+  &-210 {
+    max-width: 210px;
+  }
   &-243 {
     max-width: 243px;
+  }
+  &-318 {
+    max-width: 318px;
   }
 }

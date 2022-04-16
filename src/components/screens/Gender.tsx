@@ -11,7 +11,7 @@ export function Gender() {
 
   const switcher = useSwitcher();
 
-  const handle = (option: GenderType) => {
+  const produceHandler = (option: GenderType) => {
     return () => {
       setGender(option);
       switcher(1);
@@ -24,10 +24,10 @@ export function Gender() {
         <h2 className="OWMain-Title-2 OWMarginTop-25 OWMarginBottom-30 OWAppear_0">
           You are looking for
         </h2>
-        <div className="OWOptions OWOptions_gap14">
+        <div className="OWOptions OWOptions_gap-14">
           <button
             className="OWOption OWHeight-138 OWPadding-25 OWAppear_1"
-            onClick={handle(GenderEnum.Women)}
+            onClick={produceHandler(GenderEnum.Women)}
           >
             <div className="OWOption-Column">
               <img
@@ -40,7 +40,7 @@ export function Gender() {
           </button>
           <button
             className="OWOption OWHeight-138 OWPadding-25 OWAppear_2"
-            onClick={handle(GenderEnum.Men)}
+            onClick={produceHandler(GenderEnum.Men)}
           >
             <div className="OWOption-Column">
               <img
@@ -52,7 +52,10 @@ export function Gender() {
             </div>
           </button>
         </div>
-        <button className="OWMain-AltOption OWAppear_3" onClick={handle(null)}>
+        <button
+          className="OWMain-AltOption OWAppear_3"
+          onClick={produceHandler(null)}
+        >
           I'd like to see both
         </button>
       </div>

@@ -30,12 +30,30 @@
     max-width: 100%;
   }
 
+  &-Row {
+    justify-self: stretch;
+    display: flex;
+    align-items: center;
+    &_SpaceBetween {
+      justify-content: space-between;
+    }
+  }
+
   &-Desc {
     font-family: var(--p-font);
     font-weight: 600;
     font-size: 18px;
     line-height: math.div(25, 18) * 100%;
     color: #425a60;
+
+    &_Regular {
+      font-weight: 400;
+    }
+
+    &_Bold {
+      font-weight: 700;
+      color: #0f0f0f;
+    }
   }
 }
 
@@ -45,11 +63,11 @@
   justify-items: center;
   margin-bottom: 20px;
 
-  &_gap14 {
-    gap: 14px;
-  }
-
-  &_gap10 {
-    gap: 10px;
+  @for $i from 2 to 6 {
+    @if ($i % 2 == 0) {
+      &_gap-#{10 + $i} {
+        gap: (10px + $i);
+      }
+    }
   }
 }

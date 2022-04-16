@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { context as surveyContext } from 'context/survey';
-import { useSwitchToNext } from 'services/screens';
+import { useSwitcher } from 'services/screens';
 import { Gender as GenderType } from 'context/types';
 import { GenderEnum } from 'context/options';
 import _imgMan from 'assets/img/man.png';
@@ -9,12 +9,12 @@ import _imgWoman from 'assets/img/woman.png';
 export function Gender() {
   const { setGender } = useContext(surveyContext);
 
-  const next = useSwitchToNext();
+  const switcher = useSwitcher();
 
   const handle = (option: GenderType) => {
     return () => {
       setGender(option);
-      next();
+      switcher(1);
     };
   };
 

@@ -1,18 +1,18 @@
 import { useContext } from 'react';
 import { context } from 'context/survey';
 import { GenderEnum } from 'context/options';
-import { useSwitchToNext } from 'services/screens';
+import { useSwitcher } from 'services/screens';
 import _imgMenSunglasses from 'assets/img/men-sunglasses.png';
 import _imgMenEyeglasses from 'assets/img/men-eyeglasses.png';
 import _imgWomenSunglasses from 'assets/img/women-sunglasses.png';
 import _imgWomenEyeglasses from 'assets/img/women-eyeglasses.png';
 
 export function EyeWearType() {
-  const next = useSwitchToNext();
+  const switcher = useSwitcher();
   const { gender } = useContext(context);
 
   const goNext = () => {
-    next();
+    switcher(1);
   };
 
   return (

@@ -1,11 +1,11 @@
-import { useSwitchToNext } from 'services/screens';
+import { useSwitcher } from 'services/screens';
 import _imgGreeting from 'assets/img/greeting.png';
 
 export function Greeting() {
-  const next = useSwitchToNext();
+  const switcher = useSwitcher();
 
   const goNext = () => {
-    next();
+    switcher(1);
   };
 
   return (

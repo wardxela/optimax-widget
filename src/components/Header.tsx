@@ -1,11 +1,5 @@
-import { MouseEvent } from 'react';
-import {
-  useAmountOfScreens,
-  useCurrentScreen,
-  useSwitchToNext,
-  useSwitchToPrev,
-  useSwitchToFirst,
-} from 'services/screens';
+import { MouseEvent, useContext } from 'react';
+import { context as screenContext, useSwitcher } from 'services/screens';
 import _imgRight from 'assets/img/right-arrow.svg';
 import _imgLeft from 'assets/img/left-arrow.svg';
 import _imgExit from 'assets/img/exit.svg';
@@ -16,24 +10,22 @@ const getProgress = (current: number, max: number): string => {
 };
 
 export function Header() {
-  const screen = useCurrentScreen();
-  const amountOfScreens = useAmountOfScreens() - 1;
+  const { current: screen, amount: amountOfScreens } =
+    useContext(screenContext);
 
-  const next = useSwitchToNext();
-  const prev = useSwitchToPrev();
-  const first = useSwitchToFirst();
+  const switcher = useSwitcher();
 
   // Button handlers
   const goNext = (event: MouseEvent<HTMLButtonElement>) => {
-    next();
+    switcher(1);
   };
 
   const goBack = (event: MouseEvent<HTMLButtonElement>) => {
-    prev();
+    switcher(-1);
   };
 
   const goToFirst = (event: MouseEvent<HTMLButtonElement>) => {
-    first();
+    switcher(0);
   };
 
   return (
@@ -52,7 +44,7 @@ export function Header() {
               <img className="OWHheader-ButtonImg" src={_imgLeft} alt="Back" />
             </button>
             <div className="OWHeader-Statistics">
-              {screen}/{amountOfScreens}
+              {screen}/{amountOfScreens - 1}
             </div>
             <button className="OWHeader-Button" onClick={goToFirst}>
               <img className="OWHheader-ButtonImg" src={_imgExit} alt="Exit" />
@@ -64,7 +56,7 @@ export function Header() {
               style={{
                 transform: `translateX(${getProgress(
                   screen,
-                  amountOfScreens
+                  amountOfScreens - 1
                 )})`,
               }}
             ></span>

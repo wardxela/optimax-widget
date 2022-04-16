@@ -1,18 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { context } from './core';
 
-export function useCurrentScreen(): number {
-  const { current } = useContext(context);
-
-  return current;
-}
-
-export function useAmountOfScreens(): number {
-  const { amount } = useContext(context);
-
-  return amount;
-}
-
 export function useTimeoutBetweenScreens(): boolean {
   const { prev, current } = useContext(context);
   const [isWaiting, setIsWaiting] = useState<boolean>(
@@ -34,30 +22,15 @@ export function useTimeoutBetweenScreens(): boolean {
   return isWaiting;
 }
 
-export function useSwitchToNext() {
+export function useSwitcher() {
   const { setCurrent } = useContext(context);
 
-  return () => {
+  return (direction: number) => {
     setCurrent(prevScreen => {
-      return prevScreen + 1;
+      if (direction === 0) {
+        return 0;
+      }
+      return prevScreen + direction;
     });
-  };
-}
-
-export function useSwitchToPrev() {
-  const { setCurrent } = useContext(context);
-
-  return () => {
-    setCurrent(prevScreen => {
-      return prevScreen - 1;
-    });
-  };
-}
-
-export function useSwitchToFirst() {
-  const { setCurrent } = useContext(context);
-
-  return () => {
-    setCurrent(0);
   };
 }

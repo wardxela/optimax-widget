@@ -16,14 +16,14 @@ export function EyeWearType() {
   };
 
   return (
-    <section className="OWMain OWMain_Common">
-      <div className="OWMain-Container OWMain-Container_Common">
-        <h2 className="OWMain-Title-2 OWHelper-appear_0 OWHelper-mt-26 OWHelper-mb-32 OWHelper-maw-243">
+    <section className="OWMain">
+      <div className="OWMain-Container">
+        <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30 OWWidth-243">
           What type of glasses are you looking for?
         </h2>
-        <div className="OWMain-Options OWMain-Options_gap14">
+        <div className="OWOptions OWOptions_gap14">
           <button
-            className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_1"
+            className="OWOption OWHeight-138 OWPadding-25 OWAppear_1"
             onClick={goNext}
           >
             <div className="OWOption-Column">
@@ -34,13 +34,13 @@ export function EyeWearType() {
                     : _imgMenEyeglasses
                 }
                 alt="Eyeglasses"
-                className="OWOption-Image OWHelper-mb-15"
+                className="OWOption-Image OWMarginBottom-15"
               />
               <span className="OWOption-Desc">Eyeglasses</span>
             </div>
           </button>
           <button
-            className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_2"
+            className="OWOption OWHeight-138 OWPadding-25 OWAppear_2"
             onClick={goNext}
           >
             <div className="OWOption-Column">
@@ -51,16 +51,13 @@ export function EyeWearType() {
                     : _imgMenSunglasses
                 }
                 alt="Sunglasses"
-                className="OWOption-Image OWHelper-mb-15"
+                className="OWOption-Image OWMarginBottom-15"
               />
               <span className="OWOption-Desc">Sunglasses</span>
             </div>
           </button>
         </div>
-        <button
-          className="OWMain-SecondButton OWHelper-appear_3"
-          onClick={goNext}
-        >
+        <button className="OWMain-AltOption OWAppear_3" onClick={goNext}>
           I want to see both
         </button>
       </div>

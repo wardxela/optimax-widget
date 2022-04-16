@@ -41,13 +41,13 @@ export function Header() {
         <>
           <div className="OWHeader-Body">
             <button className="OWHeader-Button" onClick={goBack}>
-              <img className="OWHheader-ButtonImg" src={_imgLeft} alt="Back" />
+              <img className="OWHeader-ButtonImg" src={_imgLeft} alt="Back" />
             </button>
             <div className="OWHeader-Statistics">
               {screen}/{amountOfScreens - 1}
             </div>
             <button className="OWHeader-Button" onClick={goToFirst}>
-              <img className="OWHheader-ButtonImg" src={_imgExit} alt="Exit" />
+              <img className="OWHeader-ButtonImg" src={_imgExit} alt="Exit" />
             </button>
           </div>
           <div className="OWHeader-Progress">

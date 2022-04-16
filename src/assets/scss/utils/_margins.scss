@@ -1,0 +1,54 @@
+.OWMargin {
+  &Top {
+    &-40 {
+      margin-top: 40px;
+    }
+
+    &-25 {
+      margin-top: 25px;
+    }
+
+    &-100 {
+      margin-top: 100px;
+    }
+  }
+
+  &Bottom {
+    &-15 {
+      margin-bottom: 15px;
+    }
+
+    &-20 {
+      margin-bottom: 20px;
+    }
+
+    &-30 {
+      margin-bottom: 30px;
+    }
+
+    &-40 {
+      margin-bottom: 40px;
+    }
+
+    &-45 {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.OWPadding {
+  &-0 {
+    padding: 0;
+  }
+
+  &-25 {
+    padding: 25px;
+  }
+  &-30 {
+    padding: 30px;
+  }
+
+  &-36 {
+    padding: 36px;
+  }
+}

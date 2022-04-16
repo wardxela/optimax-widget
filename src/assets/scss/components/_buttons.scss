@@ -8,9 +8,15 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
   border-radius: 14px;
   cursor: pointer;
+  padding: 0;
+  width: min(274px, 100%);
 
-  &_middle {
-    width: min(274px, 100%);
+  &_Wider {
+    width: min(300px, 100%);
+  }
+
+  &_Widest {
+    width: min(316px, 100%);
   }
 
   &-Column {
@@ -30,5 +36,20 @@
     font-size: 18px;
     line-height: math.div(25, 18) * 100%;
     color: #425a60;
+  }
+}
+
+.OWOptions {
+  align-self: stretch;
+  display: grid;
+  justify-items: center;
+  margin-bottom: 20px;
+
+  &_gap14 {
+    gap: 14px;
+  }
+
+  &_gap10 {
+    gap: 10px;
   }
 }

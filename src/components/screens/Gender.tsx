@@ -19,43 +19,40 @@ export function Gender() {
   };
 
   return (
-    <section className="OWMain OWMain_Common">
-      <div className="OWMain-Container OWMain-Container_Common">
-        <h2 className="OWMain-Title-2 OWHelper-appear_0 OWHelper-mt-26 OWHelper-mb-32">
+    <section className="OWMain">
+      <div className="OWMain-Container">
+        <h2 className="OWMain-Title-2 OWMarginTop-25 OWMarginBottom-30 OWAppear_0">
           You are looking for
         </h2>
-        <div className="OWMain-Options OWMain-Options_gap14">
+        <div className="OWOptions OWOptions_gap14">
           <button
-            className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_1"
+            className="OWOption OWHeight-138 OWPadding-25 OWAppear_1"
             onClick={handle(GenderEnum.Women)}
           >
             <div className="OWOption-Column">
               <img
                 src={_imgWoman}
                 alt="Woman"
-                className="OWOption-Image OWHelper-mb-15"
+                className="OWOption-Image OWMarginBottom-15"
               />
               <span className="OWOption-Desc">Women's Styles</span>
             </div>
           </button>
           <button
-            className="OWOption OWOption_middle OWHelper-p-30 OWHelper-appear_2"
+            className="OWOption OWHeight-138 OWPadding-25 OWAppear_2"
             onClick={handle(GenderEnum.Men)}
           >
             <div className="OWOption-Column">
               <img
                 src={_imgMan}
                 alt="Woman"
-                className="OWOption-Image OWHelper-mb-15"
+                className="OWOption-Image OWMarginBottom-15"
               />
               <span className="OWOption-Desc">Men's Styles</span>
             </div>
           </button>
         </div>
-        <button
-          className="OWMain-SecondButton OWHelper-appear_3"
-          onClick={handle(null)}
-        >
+        <button className="OWMain-AltOption OWAppear_3" onClick={handle(null)}>
           I'd like to see both
         </button>
       </div>

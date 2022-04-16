@@ -41,3 +41,9 @@
     transform: scaleY(1);
   }
 }
+
+@for $shift from 0 to 5 {
+  .OWAppear_#{$shift} {
+    animation: appear 0.3s ease 0.1s * $shift 1 normal both;
+  }
+}

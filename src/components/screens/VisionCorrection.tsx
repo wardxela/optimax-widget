@@ -27,23 +27,23 @@ export function VisionCorrection() {
 
 function Suggestion({ confirmSuggestion }: SuggestionProps) {
   return (
-    <section className="OWMain OWMain_Common">
-      <div className="OWMain-Container OWMain-Container_Common">
-        <h2 className="OWMain-Title-2 OWHelper-appear_0 OWHelper-mt-26 OWHelper-mb-32">
+    <section className="OWMain">
+      <div className="OWMain-Container">
+        <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
           Do you need vision correction?
         </h2>
-        <div className="OWMain-Options OWMain-Options_gap14">
+        <div className="OWOptions OWOptions_gap14">
           <button
-            className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_1"
+            className="OWOption OWHeight-117 OWAppear_1"
             onClick={confirmSuggestion}
           >
             <span className="OWOption-Desc">Yes</span>
           </button>
-          <button className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_2">
+          <button className="OWOption OWHeight-117 OWAppear_2">
             <span className="OWOption-Desc">No</span>
           </button>
         </div>
-        <button className="OWMain-SecondButton OWHelper-appear_3">Skip</button>
+        <button className="OWMain-AltOption OWAppear_3">Skip</button>
       </div>
     </section>
   );
@@ -51,23 +51,23 @@ function Suggestion({ confirmSuggestion }: SuggestionProps) {
 
 function MainScreen() {
   return (
-    <section className="OWMain OWMain_Common">
-      <div className="OWMain-Container OWMain-Container_Common">
-        <h2 className="OWMain-Title-2 OWHelper-appear_0 OWHelper-mt-26 OWHelper-mb-32">
+    <section className="OWMain">
+      <div className="OWMain-Container">
+        <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
           What do you need your glasses for?
         </h2>
-        <div className="OWMain-Options OWMain-Options_gap14">
-          <button className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_1">
+        <div className="OWOptions OWOptions_gap14">
+          <button className="OWOption OWOption_Wider OWHeight-84 OWAppear_1">
             <span className="OWOption-Desc">Near Vision</span>
           </button>
-          <button className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_2">
+          <button className="OWOption OWOption_Wider OWHeight-84 OWAppear_2">
             <span className="OWOption-Desc">Distance Vision</span>
           </button>
-          <button className="OWOption OWOption_middle OWHelper-p-36 OWHelper-appear_3">
+          <button className="OWOption OWOption_Wider OWHeight-84 OWAppear_3">
             <span className="OWOption-Desc">Multifocal / Progressive</span>
           </button>
         </div>
-        <button className="OWMain-SecondButton OWHelper-appear_3">Skip</button>
+        <button className="OWMain-AltOption OWAppear_3">Skip</button>
       </div>
     </section>
   );

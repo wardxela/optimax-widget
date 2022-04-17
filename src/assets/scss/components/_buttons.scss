@@ -25,9 +25,40 @@
     align-items: center;
   }
 
+  &-FaceImages {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & > .OWOption-Image:first-child {
+      max-width: 30px;
+    }
+    & > .OWOption-Image:last-child {
+      max-width: 38px;
+    }
+  }
+
+  &-Decorator {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: #dedede;
+      top: calc(50% - math.div(35px, 2));
+      right: -20px;
+      width: 1px;
+      height: 35px;
+    }
+    &_27 {
+      &::after {
+        right: -27px;
+      }
+    }
+  }
+
   &-Image {
     display: block;
     max-width: 100%;
+    object-fit: cover;
   }
 
   &-Row {
@@ -36,6 +67,12 @@
     align-items: center;
     &_SpaceBetween {
       justify-content: space-between;
+    }
+    @for $i from 0 to 5 {
+      $k: $i * 5;
+      &_Gap-#{30 + $k} {
+        gap: 30px + $k;
+      }
     }
   }
 
@@ -48,6 +85,10 @@
 
     &_Regular {
       font-weight: 400;
+    }
+
+    &_Small {
+      font-size: 16px;
     }
 
     &_Bold {
@@ -63,7 +104,7 @@
   justify-items: center;
   margin-bottom: 20px;
 
-  @for $i from 2 to 6 {
+  @for $i from 2 to 8 {
     @if ($i % 2 == 0) {
       &_gap-#{10 + $i} {
         gap: (10px + $i);

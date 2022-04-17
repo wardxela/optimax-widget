@@ -6,6 +6,8 @@ import { VisionCorrection } from './screens/VisionCorrection';
 import { SuggestVisionCorrection } from './screens/SuggestVisionCorrection';
 import { FrameSize } from './screens/FrameSize';
 import { FrameSizeAlt } from './screens/FrameSizeAlt';
+import { KindOfProtection } from './screens/KindOfProtection';
+import { FaceShape } from './screens/FaceShape';
 
 export function Main() {
   return (
@@ -21,6 +23,8 @@ export function Main() {
         <FrameSize />
         <FrameSizeAlt />
       </Screen>
+      <Screen element={<KindOfProtection />} />
+      <Screen element={<FaceShape />} />
     </Screens>
   );
 }

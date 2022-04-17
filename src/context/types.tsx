@@ -20,7 +20,7 @@ export type FacialFeatures = FacialFeaturesEnum | null;
 export type Shape = string[];
 export type Brand = string[];
 
-export interface ISurveyContext {
+export interface SurveyContextInterface {
   gender: Gender;
   eyeWearType: EyeWearType;
   lensType: LensType;
@@ -46,7 +46,7 @@ export interface ISurveyContext {
   getDestinationURL: () => string;
 }
 
-export interface SurveyContextProps {
+export interface SurveyProviderProps {
   children: ReactNode;
   source: string;
 }

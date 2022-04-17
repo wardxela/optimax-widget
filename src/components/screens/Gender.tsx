@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { context as surveyContext } from 'context/survey';
+import { SurveyContext } from 'context/survey';
 import { useSwitcher } from 'services/screens';
 import { Gender as GenderType } from 'context/types';
 import { GenderEnum } from 'context/options';
@@ -7,7 +7,7 @@ import _imgMan from 'assets/img/man.png';
 import _imgWoman from 'assets/img/woman.png';
 
 export function Gender() {
-  const { setGender } = useContext(surveyContext);
+  const { setGender } = useContext(SurveyContext);
 
   const switcher = useSwitcher();
 

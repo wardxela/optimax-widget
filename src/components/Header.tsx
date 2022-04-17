@@ -1,5 +1,5 @@
-import { MouseEvent, useContext } from 'react';
-import { context as screenContext, useSwitcher } from 'services/screens';
+import { useContext } from 'react';
+import { ScreenContext, useSwitcher } from 'services/screens';
 import _imgRight from 'assets/img/right-arrow.svg';
 import _imgLeft from 'assets/img/left-arrow.svg';
 import _imgExit from 'assets/img/exit.svg';
@@ -11,26 +11,26 @@ const getProgress = (current: number, max: number): string => {
 
 export function Header() {
   const { current: screen, amount: amountOfScreens } =
-    useContext(screenContext);
+    useContext(ScreenContext);
 
   const switcher = useSwitcher();
 
   // Button handlers
-  const goNext = (event: MouseEvent<HTMLButtonElement>) => {
+  const goNext = () => {
     switcher(1);
   };
 
-  const goBack = (event: MouseEvent<HTMLButtonElement>) => {
+  const goBack = () => {
     switcher(-1);
   };
 
-  const goToFirst = (event: MouseEvent<HTMLButtonElement>) => {
+  const goToFirst = () => {
     switcher(0);
   };
 
   return (
     <header className="OWHeader">
-      {screen === 0 ? (
+      {screen[0] === 0 ? (
         <div className="OWHeader-Body">
           <img src={_imgLogo} alt="Optimax DEV" className="OWHeader-Logo" />
           <button className="OWHeader-Button" onClick={goNext}>
@@ -44,7 +44,7 @@ export function Header() {
               <img className="OWHeader-ButtonImg" src={_imgLeft} alt="Back" />
             </button>
             <div className="OWHeader-Statistics">
-              {screen}/{amountOfScreens - 1}
+              {screen[0]}/{amountOfScreens - 1}
             </div>
             <button className="OWHeader-Button" onClick={goToFirst}>
               <img className="OWHeader-ButtonImg" src={_imgExit} alt="Exit" />
@@ -55,7 +55,7 @@ export function Header() {
               className="OWHeader-ProgressCompleted"
               style={{
                 transform: `translateX(${getProgress(
-                  screen,
+                  screen[0],
                   amountOfScreens - 1
                 )})`,
               }}

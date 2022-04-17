@@ -7,14 +7,14 @@ import {
   FacialFeatures,
   FrameSize,
   Gender,
-  ISurveyContext,
+  SurveyContextInterface,
   LensType,
   Shade,
   Shape,
-  SurveyContextProps,
+  SurveyProviderProps,
 } from './types';
 
-export const context = createContext<ISurveyContext>({
+export const SurveyContext = createContext<SurveyContextInterface>({
   gender: null,
   eyeWearType: null,
   lensType: null,
@@ -39,7 +39,7 @@ export const context = createContext<ISurveyContext>({
   getDestinationURL: () => '',
 });
 
-export function SurveyContext({ children, source }: SurveyContextProps) {
+export function SurveyProvider({ children, source }: SurveyProviderProps) {
   const [gender, setGender] = useState<Gender>(null);
   const [eyeWearType, setEyeWearType] = useState<EyeWearType>(null);
   const [lensType, setLensType] = useState<LensType>(null);
@@ -61,7 +61,7 @@ export function SurveyContext({ children, source }: SurveyContextProps) {
   };
 
   return (
-    <context.Provider
+    <SurveyContext.Provider
       value={{
         // State
         gender,
@@ -91,6 +91,6 @@ export function SurveyContext({ children, source }: SurveyContextProps) {
       }}
     >
       {children}
-    </context.Provider>
+    </SurveyContext.Provider>
   );
 }

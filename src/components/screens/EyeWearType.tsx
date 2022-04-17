@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { context as surveyContext } from 'context/survey';
+import { SurveyContext } from 'context/survey';
 import { GenderEnum, EyeWearTypeEnum } from 'context/options';
 import { useSwitcher } from 'services/screens';
 import { EyeWearType as EyeWearTypeContract } from 'context/types';
@@ -10,7 +10,7 @@ import _imgWomenEyeglasses from 'assets/img/women-eyeglasses.png';
 
 export function EyeWearType() {
   const switcher = useSwitcher();
-  const { gender, setEyeWearType } = useContext(surveyContext);
+  const { gender, setEyeWearType } = useContext(SurveyContext);
 
   const produceHandler = (option: EyeWearTypeContract) => {
     return () => {

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { ScreenContext } from 'services/screens';
-import { SurveyContext } from './survey';
+import { ScreenProvider } from 'services/screens';
+import { SurveyProvider } from './survey';
 
 interface StateProps {
   children: ReactNode;
@@ -9,8 +9,8 @@ interface StateProps {
 
 export function State({ children, source }: StateProps) {
   return (
-    <SurveyContext source={source}>
-      <ScreenContext>{children}</ScreenContext>
-    </SurveyContext>
+    <SurveyProvider source={source}>
+      <ScreenProvider>{children}</ScreenProvider>
+    </SurveyProvider>
   );
 }

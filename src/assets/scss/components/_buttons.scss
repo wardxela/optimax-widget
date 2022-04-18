@@ -53,6 +53,11 @@
         right: -27px;
       }
     }
+    &_15 {
+      &::after {
+        right: -15px;
+      }
+    }
   }
 
   &-Image {
@@ -85,6 +90,10 @@
 
     &_Regular {
       font-weight: 400;
+    }
+
+    &_Middle {
+      font-size: 17px;
     }
 
     &_Small {

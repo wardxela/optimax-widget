@@ -4,10 +4,6 @@ import _imgGreeting from 'assets/img/greeting.png';
 export function Greeting() {
   const switcher = useSwitcher();
 
-  const goNext = () => {
-    switcher(1);
-  };
-
   return (
     <section className="OWMain OWMain_Gradient">
       <div className="OWMain-Container">
@@ -23,7 +19,10 @@ export function Greeting() {
           Take the quiz to easily discover your perfect fit from thousands of
           styles
         </p>
-        <button className="OWMain-Button OWAppear_2" onClick={goNext}>
+        <button
+          className="OWMain-Button OWAppear_2"
+          onClick={() => switcher(1)}
+        >
           Start Now
         </button>
       </div>

@@ -1,5 +1,5 @@
 import { useSwitcher } from 'services/screens';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { SurveyContext } from 'context/survey';
 import _imgLongMaleFace from 'assets/img/long-male-face.png';
 import _imgRoundMaleFace from 'assets/img/round-male-face.png';
@@ -7,32 +7,40 @@ import _imgInBetweenMaleFace from 'assets/img/in-between-male-face.png';
 import _imgLongFemaleFace from 'assets/img/long-female-face.png';
 import _imgRoundFemaleFace from 'assets/img/round-female-face.png';
 import _imgInBetweenFemaleFace from 'assets/img/in-between-female-face.png';
-import { GenderEnum } from 'context/options';
+import { FaceShapeEnum, GenderEnum } from 'context/options';
+import { FaceShape as FaceShapeType } from 'context/types';
 
 export function FaceShape() {
   const switcher = useSwitcher();
-  const { gender } = useContext(SurveyContext);
-  const [padding, setPadding] = useState('');
-  const [gap, setGap] = useState('');
+  const { gender, setFaceShape } = useContext(SurveyContext);
 
-  useEffect(() => {
-    switch (gender) {
-      case GenderEnum.Men:
-        setGap('OWOption-Row_Gap-50');
-        setPadding('OWPadding-10-30');
-        break;
-      case GenderEnum.Women:
-        setGap('OWOption-Row_Gap-45');
-        setPadding('OWPadding-10-23');
-        break;
-      default:
-        setGap('OWOption-Row_Gap-30');
-        setPadding('OWPadding-10-23');
-    }
-  }, [gender]);
+  let gap: string;
+  let padding: string;
+  let decorator: string = '';
+  let fz: string = '';
 
-  const produceHandler = () => {
-    return () => {};
+  switch (gender) {
+    case GenderEnum.Men:
+      gap = 'OWOption-Row_Gap-50';
+      padding = 'OWPadding-10-30';
+      decorator = 'OWOption-Decorator_27';
+      break;
+    case GenderEnum.Women:
+      gap = 'OWOption-Row_Gap-45';
+      padding = 'OWPadding-10-23';
+      break;
+    default:
+      gap = 'OWOption-Row_Gap-30';
+      padding = 'OWPadding-10-23';
+      decorator = 'OWOption-Decorator_15';
+      fz = 'OWOption-Desc_Middle';
+  }
+
+  const produceHandler = (option: FaceShapeType) => {
+    return () => {
+      setFaceShape(option);
+      switcher(1);
+    };
   };
 
   return (
@@ -44,10 +52,10 @@ export function FaceShape() {
         <div className="OWOptions OWOptions_gap-14">
           <button
             className={`OWOption OWOption_Widest OWHeight-89 OWAppear_1 ${padding}`}
-            onClick={produceHandler()}
+            onClick={produceHandler(FaceShapeEnum.Long)}
           >
             <div className={`OWOption-Row ${gap}`}>
-              <div className="OWOption-Decorator OWOption-Decorator_27">
+              <div className={`OWOption-Decorator ${decorator}`}>
                 {gender === null ? (
                   <div className="OWOption-FaceImages">
                     <img
@@ -73,15 +81,15 @@ export function FaceShape() {
                   />
                 )}
               </div>
-              <span className="OWOption-Desc">I have a long face</span>
+              <span className={`OWOption-Desc ${fz}`}>I have a long face</span>
             </div>
           </button>
           <button
             className={`OWOption OWOption_Widest OWHeight-89 OWAppear_2 ${padding}`}
-            onClick={produceHandler()}
+            onClick={produceHandler(FaceShapeEnum.Round)}
           >
             <div className={`OWOption-Row ${gap}`}>
-              <div className="OWOption-Decorator OWOption-Decorator_27">
+              <div className={`OWOption-Decorator ${decorator}`}>
                 {gender === null ? (
                   <div className="OWOption-FaceImages">
                     <img
@@ -107,15 +115,15 @@ export function FaceShape() {
                   />
                 )}
               </div>
-              <span className="OWOption-Desc">I have a round face</span>
+              <span className={`OWOption-Desc ${fz}`}>I have a round face</span>
             </div>
           </button>
           <button
             className={`OWOption OWOption_Widest OWHeight-89 OWAppear_3 ${padding}`}
-            onClick={produceHandler()}
+            onClick={produceHandler(FaceShapeEnum.Between)}
           >
             <div className={`OWOption-Row ${gap}`}>
-              <div className="OWOption-Decorator OWOption-Decorator_27">
+              <div className={`OWOption-Decorator ${decorator}`}>
                 {gender === null ? (
                   <div className="OWOption-FaceImages">
                     <img
@@ -141,13 +149,13 @@ export function FaceShape() {
                   />
                 )}
               </div>
-              <span className="OWOption-Desc">In between</span>
+              <span className={`OWOption-Desc ${fz}`}>In between</span>
             </div>
           </button>
         </div>
         <button
           className="OWMain-AltOption OWAppear_4"
-          onClick={() => switcher(1)}
+          onClick={produceHandler(null)}
         >
           I don’t know
         </button>

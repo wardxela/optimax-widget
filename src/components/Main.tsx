@@ -8,6 +8,8 @@ import { FrameSize } from './screens/FrameSize';
 import { FrameSizeAlt } from './screens/FrameSizeAlt';
 import { KindOfProtection } from './screens/KindOfProtection';
 import { FaceShape } from './screens/FaceShape';
+import { FacialFeatures } from './screens/FacialFeatures';
+import { FrameStyle } from './screens/FrameStyle';
 
 export function Main() {
   return (
@@ -25,6 +27,8 @@ export function Main() {
       </Screen>
       <Screen element={<KindOfProtection />} />
       <Screen element={<FaceShape />} />
+      <Screen element={<FacialFeatures />} />
+      <Screen element={<FrameStyle />} />
     </Screens>
   );
 }

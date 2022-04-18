@@ -19,6 +19,11 @@
     box-sizing: border-box;
   }
 
+  &-WideElement {
+    align-self: stretch;
+    overflow-x: auto;
+  }
+
   &-Image {
     max-width: 100%;
     user-select: none;
@@ -52,6 +57,14 @@
     line-height: 174%;
     color: #3a4850;
     max-width: 272px;
+    margin: 0;
+  }
+
+  &-Tip {
+    font-family: var(--p-font);
+    font-size: 16px;
+    line-height: 188%;
+    color: #697580;
     margin: 0;
   }
 

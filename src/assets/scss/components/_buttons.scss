@@ -113,6 +113,11 @@
   justify-items: center;
   margin-bottom: 20px;
 
+  &_3-cols {
+    grid-template-columns: repeat(3, 160px);
+    padding: 0 12px;
+  }
+
   @for $i from 2 to 8 {
     @if ($i % 2 == 0) {
       &_gap-#{10 + $i} {

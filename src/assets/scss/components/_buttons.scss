@@ -112,15 +112,15 @@
   align-self: stretch;
   display: grid;
   justify-items: center;
-  margin-bottom: 20px;
+  box-sizing: border-box;
 
   &_Clear {
     justify-items: stretch;
   }
 
-  &_3-cols {
-    grid-template-columns: repeat(3, 160px);
-    padding: 0 12px;
+  &_4-cols {
+    grid-template-columns: repeat(4, 160px);
+    padding: 24px 12px 12px;
   }
 
   @for $i from 2 to 8 {
@@ -138,11 +138,24 @@
   &-Label {
   }
 
+  &-Title {
+    font-family: var(--p-font);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: #697580;
+    user-select: none;
+  }
+
+  &-Image {
+    user-select: none;
+  }
+
   &-Itself {
     visibility: hidden;
     position: absolute;
     &:checked ~ .OWCheckbox-Label {
-      border: 2px solid #2196f3;
+      outline: 2px solid #2196f3;
     }
     &:checked ~ .OWCheckbox-Assurance {
       opacity: 1;

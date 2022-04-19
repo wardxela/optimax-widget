@@ -53,18 +53,18 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
 
   // only for tests
 
-  // useEffect(() => {
-  //   console.log(gender);
-  //   console.log(eyeWearType);
-  //   console.log(lensType);
-  //   console.log(frameSize);
-  //   console.log(blueLight);
-  //   console.log(shade);
-  //   console.log(faceShape);
-  //   console.log(facialFeatures);
-  //   console.log(shape);
-  //   console.log(brand);
-  // });
+  useEffect(() => {
+    console.log(gender);
+    console.log(eyeWearType);
+    console.log(lensType);
+    console.log(frameSize);
+    console.log(blueLight);
+    console.log(shade);
+    console.log(faceShape);
+    console.log(facialFeatures);
+    console.log(shape);
+    console.log(brand);
+  });
 
   const getDestinationURL = () => {
     try {

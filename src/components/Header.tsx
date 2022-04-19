@@ -44,7 +44,7 @@ export function Header() {
               <img className="OWHeader-ButtonImg" src={_imgLeft} alt="Back" />
             </button>
             <div className="OWHeader-Statistics">
-              {screen[0]}/{amountOfScreens - 1}
+              {screen[0]}/{amountOfScreens - 2}
             </div>
             <button className="OWHeader-Button" onClick={goToFirst}>
               <img className="OWHeader-ButtonImg" src={_imgExit} alt="Exit" />

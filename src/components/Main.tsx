@@ -10,6 +10,9 @@ import { KindOfProtection } from './screens/KindOfProtection';
 import { FaceShape } from './screens/FaceShape';
 import { FacialFeatures } from './screens/FacialFeatures';
 import { FrameStyle } from './screens/FrameStyle';
+import { SuggestBrands } from './screens/SuggestBrands';
+import { ChooseBrands } from './screens/ChooseBrands';
+import { FinalScreen } from './screens/FinalScreen';
 
 export function Main() {
   return (
@@ -29,6 +32,9 @@ export function Main() {
       <Screen element={<FaceShape />} />
       <Screen element={<FacialFeatures />} />
       <Screen element={<FrameStyle />} />
+      <Screen element={<SuggestBrands />} />
+      <Screen element={<ChooseBrands />} />
+      <Screen element={<FinalScreen />} />
     </Screens>
   );
 }

@@ -1,14 +1,14 @@
 import { useSwitcher } from 'services/screens';
 import { useContext } from 'react';
 import { SurveyContext } from 'context/survey';
+import { FaceShapeEnum, GenderEnum } from 'context/options';
+import { FaceShape as FaceShapeType } from 'context/types';
 import _imgLongMaleFace from 'assets/img/face-shape/long-male-face.png';
 import _imgRoundMaleFace from 'assets/img/face-shape/round-male-face.png';
 import _imgInBetweenMaleFace from 'assets/img/face-shape/in-between-male-face.png';
 import _imgLongFemaleFace from 'assets/img/face-shape/long-female-face.png';
 import _imgRoundFemaleFace from 'assets/img/face-shape/round-female-face.png';
 import _imgInBetweenFemaleFace from 'assets/img/face-shape/in-between-female-face.png';
-import { FaceShapeEnum, GenderEnum } from 'context/options';
-import { FaceShape as FaceShapeType } from 'context/types';
 
 export function FaceShape() {
   const switcher = useSwitcher();

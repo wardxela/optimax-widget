@@ -60,7 +60,7 @@ export function FrameSize() {
         </div>
         <button
           className="OWMain-AltOption OWAppear_4"
-          onClick={produceHandler(null)}
+          onClick={() => switcher(1)}
         >
           I don’t know
         </button>

@@ -3,6 +3,7 @@ import { ScreenContext } from './core';
 
 export function useTimeoutBetweenScreens(ms: number): boolean {
   const { prev, current } = useContext(ScreenContext);
+
   const [isWaiting, setIsWaiting] = useState<boolean>(
     prev === null ||
       (prev[0] === current[0] ? prev[1] < current[1] : prev[0] < current[0])

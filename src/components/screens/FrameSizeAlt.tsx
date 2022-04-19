@@ -10,16 +10,16 @@ export function FrameSizeAlt() {
   const { setFrameSize } = useContext(SurveyContext);
   const switcher = useSwitcher();
 
-  if (isWaiting) {
-    return <Loader text="No worries, we’ve got you!" />;
-  }
-
   const produceHandler = (option: FrameSize) => {
     return () => {
       switcher(1);
       setFrameSize(option);
     };
   };
+
+  if (isWaiting) {
+    return <Loader text="No worries, we’ve got you!" />;
+  }
 
   return (
     <section className="OWMain">

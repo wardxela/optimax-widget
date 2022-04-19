@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { ScreenContext, useSwitcher } from 'services/screens';
-import _imgRight from 'assets/img/right-arrow.svg';
-import _imgLeft from 'assets/img/left-arrow.svg';
-import _imgExit from 'assets/img/exit.svg';
+import _imgRight from 'assets/img/icons/right-arrow.svg';
+import _imgLeft from 'assets/img/icons/left-arrow.svg';
+import _imgExit from 'assets/img/icons/exit.svg';
 import _imgLogo from 'assets/img/Optimax.png';
 
 const getProgress = (current: number, max: number): string => {

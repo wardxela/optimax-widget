@@ -1,9 +1,9 @@
-import _imgSizes from 'assets/img/sizes.png';
+import { useContext } from 'react';
 import { FrameSizeEnum } from 'context/options';
 import { SurveyContext } from 'context/survey';
 import { FrameSize as FrameSizeType } from 'context/types';
-import { useContext } from 'react';
 import { useSwitcher } from 'services/screens';
+import _imgSizes from 'assets/img/sizes.png';
 
 export function FrameSize() {
   const { setFrameSize } = useContext(SurveyContext);

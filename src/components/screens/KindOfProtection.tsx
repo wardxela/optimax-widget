@@ -3,9 +3,9 @@ import { SurveyContext } from 'context/survey';
 import { BlueLight, Shade } from 'context/types';
 import { useContext } from 'react';
 import { useSwitcher } from 'services/screens';
-import _imgDarkShade from 'assets/img/dark-shade.png';
-import _imgLightShade from 'assets/img/light-shade.png';
-import _imgTransitioningShade from 'assets/img/transitioning-shade.png';
+import _imgDarkShade from 'assets/img/shade/dark-shade.png';
+import _imgLightShade from 'assets/img/shade/light-shade.png';
+import _imgTransitioningShade from 'assets/img/shade/transitioning-shade.png';
 
 export function KindOfProtection() {
   const { eyeWearType, setBlueLight, setShade } = useContext(SurveyContext);

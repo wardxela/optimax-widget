@@ -1,11 +1,19 @@
-import _imgAssurance from 'assets/img/assurance.svg';
-import _imgRectangle from 'assets/img/Rectangle.png';
+import _imgAssurance from 'assets/img/icons/assurance.svg';
+import _imgRectangle from 'assets/img/frame-style/Rectangle.png';
 
 interface CheckboxCardProps {
   id: string;
   title: string;
   image: string;
 }
+
+const frameStylesData = [
+  {
+    id: 'rectangle',
+    title: 'Rectangle',
+    image: _imgRectangle,
+  },
+];
 
 function CheckboxCard({ id, title, image }: CheckboxCardProps) {
   return (
@@ -41,66 +49,16 @@ export function FrameStyle() {
         <p className="OWMain-Tip OWAppear_1">You can pick more than one.</p>
         <div className="OWMain-WideElement OWMarginBottom-10">
           <div className="OWOptions OWOptions_Clear OWOptions_4-cols OWOptions_gap-14">
-            <CheckboxCard
-              id="rectangle"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-2"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-3"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-4"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-5"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-6"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-7"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-8"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-9"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-10"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-11"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
-            <CheckboxCard
-              id="rectangle-12"
-              title="Rectangle"
-              image={_imgRectangle}
-            />
+            {frameStylesData.map(frameStyle => {
+              return (
+                <CheckboxCard
+                  key={frameStyle.id}
+                  id={frameStyle.id}
+                  title={frameStyle.title}
+                  image={frameStyle.image}
+                />
+              );
+            })}
           </div>
         </div>
         <button className="OWMain-Button OWAppear_2">Continue</button>

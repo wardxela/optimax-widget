@@ -3,10 +3,10 @@ import { SurveyContext } from 'context/survey';
 import { GenderEnum, EyeWearTypeEnum } from 'context/options';
 import { useSwitcher } from 'services/screens';
 import { EyeWearType as EyeWearTypeContract } from 'context/types';
-import _imgMenSunglasses from 'assets/img/men-sunglasses.png';
-import _imgMenEyeglasses from 'assets/img/men-eyeglasses.png';
-import _imgWomenSunglasses from 'assets/img/women-sunglasses.png';
-import _imgWomenEyeglasses from 'assets/img/women-eyeglasses.png';
+import _imgMenSunglasses from 'assets/img/glasses-type/men-sunglasses.png';
+import _imgMenEyeglasses from 'assets/img/glasses-type/men-eyeglasses.png';
+import _imgWomenSunglasses from 'assets/img/glasses-type/women-sunglasses.png';
+import _imgWomenEyeglasses from 'assets/img/glasses-type/women-eyeglasses.png';
 
 export function EyeWearType() {
   const switcher = useSwitcher();

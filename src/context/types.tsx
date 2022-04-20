@@ -30,7 +30,7 @@ export interface SurveyContextInterface {
   faceShape: FaceShape;
   facialFeatures: FacialFeatures;
   shape: Shape;
-  brand: Brand;
+  brands: Brand;
 
   setGender: Dispatch<SetStateAction<Gender>>;
   setEyeWearType: Dispatch<SetStateAction<EyeWearType>>;
@@ -41,7 +41,7 @@ export interface SurveyContextInterface {
   setFaceShape: Dispatch<SetStateAction<FaceShape>>;
   setFacialFeatures: Dispatch<SetStateAction<FacialFeatures>>;
   setShape: Dispatch<SetStateAction<Shape>>;
-  setBrand: Dispatch<SetStateAction<Brand>>;
+  setBrands: Dispatch<SetStateAction<Brand>>;
 
   getDestinationURL: () => string;
 }

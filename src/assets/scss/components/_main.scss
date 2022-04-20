@@ -50,6 +50,15 @@
     margin: 0;
   }
 
+  &-Title-3 {
+    font-family: var(--s-font);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #2196f3;
+    margin: 0;
+  }
+
   &-Description {
     font-family: var(--p-font);
     font-weight: 700;
@@ -57,6 +66,18 @@
     line-height: 174%;
     color: #3a4850;
     max-width: 272px;
+    margin: 0;
+    &_Alt {
+      font-family: var(--s-font);
+    }
+  }
+
+  &-Agreement {
+    font-family: var(--s-font);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #5b6971;
     margin: 0;
   }
 

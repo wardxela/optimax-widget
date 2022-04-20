@@ -1,5 +1,7 @@
 .OWHeader {
-  min-height: 66px;
+  max-height: 66px;
+  display: flex;
+  flex-direction: column;
   &-Body {
     padding: 14px 25px;
     display: flex;
@@ -16,6 +18,7 @@
   }
 
   &-Progress {
+    flex-shrink: 0;
     position: relative;
     height: 8px;
     background-color: #d8d8d8;

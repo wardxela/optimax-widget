@@ -15,54 +15,67 @@ export function Header() {
 
   const switcher = useSwitcher();
 
-  // Button handlers
-  const goNext = () => {
-    switcher(1);
-  };
+  if (screen[0] === 0) {
+    return (
+      <header className="OWHeader">
+        <div className="OWHeader-Body">
+          <img src={_imgLogo} alt="Optimax DEV" className="OWHeader-Logo" />
+          <button className="OWHeader-Button" onClick={() => switcher(1)}>
+            <img src={_imgRight} alt="Next" />
+          </button>
+        </div>
+      </header>
+    );
+  }
 
-  const goBack = () => {
-    switcher(-1);
-  };
-
-  const goToFirst = () => {
-    switcher(0);
-  };
+  if (screen[0] === amountOfScreens - 1) {
+    return (
+      <header className="OWHeader">
+        <div className="OWHeader-Body">
+          <img src={_imgLogo} alt="Optimax DEV" className="OWHeader-Logo" />
+          <button className="OWHeader-Button" onClick={() => switcher(0)}>
+            <img src={_imgExit} alt="Start from the beginning" />
+          </button>
+        </div>
+        <div className="OWHeader-Progress">
+          <span
+            className="OWHeader-ProgressCompleted"
+            style={{
+              transform: `translateX(${getProgress(
+                screen[0],
+                amountOfScreens - 1
+              )})`,
+            }}
+          ></span>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="OWHeader">
-      {screen[0] === 0 ? (
-        <div className="OWHeader-Body">
-          <img src={_imgLogo} alt="Optimax DEV" className="OWHeader-Logo" />
-          <button className="OWHeader-Button" onClick={goNext}>
-            <img src={_imgRight} alt="Go" />
-          </button>
+      <div className="OWHeader-Body">
+        <button className="OWHeader-Button" onClick={() => switcher(-1)}>
+          <img className="OWHeader-ButtonImg" src={_imgLeft} alt="Previous" />
+        </button>
+        <div className="OWHeader-Statistics">
+          {screen[0]}/{amountOfScreens - 2}
         </div>
-      ) : (
-        <>
-          <div className="OWHeader-Body">
-            <button className="OWHeader-Button" onClick={goBack}>
-              <img className="OWHeader-ButtonImg" src={_imgLeft} alt="Back" />
-            </button>
-            <div className="OWHeader-Statistics">
-              {screen[0]}/{amountOfScreens - 2}
-            </div>
-            <button className="OWHeader-Button" onClick={goToFirst}>
-              <img className="OWHeader-ButtonImg" src={_imgExit} alt="Exit" />
-            </button>
-          </div>
-          <div className="OWHeader-Progress">
-            <span
-              className="OWHeader-ProgressCompleted"
-              style={{
-                transform: `translateX(${getProgress(
-                  screen[0],
-                  amountOfScreens - 1
-                )})`,
-              }}
-            ></span>
-          </div>
-        </>
-      )}
+        <button className="OWHeader-Button" onClick={() => switcher(0)}>
+          <img className="OWHeader-ButtonImg" src={_imgExit} alt="Exit" />
+        </button>
+      </div>
+      <div className="OWHeader-Progress">
+        <span
+          className="OWHeader-ProgressCompleted"
+          style={{
+            transform: `translateX(${getProgress(
+              screen[0],
+              amountOfScreens - 1
+            )})`,
+          }}
+        ></span>
+      </div>
     </header>
   );
 }

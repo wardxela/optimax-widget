@@ -24,7 +24,7 @@ export const SurveyContext = createContext<SurveyContextInterface>({
   faceShape: null,
   facialFeatures: null,
   shape: [],
-  brand: [],
+  brands: [],
 
   setGender: () => {},
   setEyeWearType: () => {},
@@ -35,7 +35,7 @@ export const SurveyContext = createContext<SurveyContextInterface>({
   setFaceShape: () => {},
   setFacialFeatures: () => {},
   setShape: () => {},
-  setBrand: () => {},
+  setBrands: () => {},
   getDestinationURL: () => '',
 });
 
@@ -49,7 +49,7 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
   const [faceShape, setFaceShape] = useState<FaceShape>(null);
   const [facialFeatures, setFacialFeatures] = useState<FacialFeatures>(null);
   const [shape, setShape] = useState<Shape>([]);
-  const [brand, setBrand] = useState<Brand>([]);
+  const [brands, setBrands] = useState<Brand>([]);
 
   // only for tests
 
@@ -88,7 +88,7 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
         faceShape,
         facialFeatures,
         shape,
-        brand,
+        brands,
 
         // Setters
         setGender,
@@ -100,7 +100,7 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
         setFaceShape,
         setFacialFeatures,
         setShape,
-        setBrand,
+        setBrands,
 
         getDestinationURL,
       }}

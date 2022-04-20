@@ -10,5 +10,11 @@
   &-Image {
     display: block;
     max-width: 100%;
+
+    &_Gift {
+      position: relative;
+      left: -5px;
+      top: -10px;
+    }
   }
 }

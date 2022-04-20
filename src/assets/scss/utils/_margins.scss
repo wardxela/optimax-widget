@@ -1,5 +1,9 @@
 .OWMargin {
   &Top {
+    &-Auto {
+      margin-top: auto;
+    }
+
     &-40 {
       margin-top: 40px;
     }
@@ -18,7 +22,7 @@
   }
 
   &Bottom {
-    @for $i from 0 through 7 {
+    @for $i from 0 through 8 {
       $value: 10 + 5 * $i;
       &-#{$value} {
         margin-bottom: $value + px;

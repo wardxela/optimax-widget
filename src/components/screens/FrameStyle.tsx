@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { SurveyContext } from 'context/survey';
 import { useSwitcher } from 'services/screens';
-import _imgAssurance from 'assets/img/icons/assurance.svg';
+import { CheckboxCard } from 'components/CheckboxCard';
 import _imgRectangle from 'assets/img/frame-style/Rectangle.png';
 import _imgBrowline from 'assets/img/frame-style/Browline.png';
 import _imgAviator from 'assets/img/frame-style/Aviator.png';
@@ -14,12 +14,6 @@ import _imgCatEye from 'assets/img/frame-style/Cat Eye.png';
 import _imgRimless from 'assets/img/frame-style/Rimless.png';
 import _imgSquare from 'assets/img/frame-style/Square.png';
 import _imgWrap from 'assets/img/frame-style/Wrap.png';
-
-interface CheckboxCardProps {
-  id: string;
-  title: string;
-  image: string;
-}
 
 const frameStylesData = [
   {
@@ -84,54 +78,8 @@ const frameStylesData = [
   },
 ];
 
-function CheckboxCard({ id, title, image }: CheckboxCardProps) {
-  const { shape, setShape } = useContext(SurveyContext);
-
-  const alreadyExist = shape.indexOf(id) !== -1;
-
-  const [checked, setChecked] = useState(alreadyExist);
-
-  useEffect(() => {
-    if (checked && !alreadyExist) {
-      setShape(prevShape => [...prevShape, id]);
-    } else if (!checked && alreadyExist) {
-      setShape(prevShape =>
-        prevShape.filter(currentShape => currentShape !== id)
-      );
-    }
-  }, [id, checked, alreadyExist, setShape]);
-
-  return (
-    <div className="OWCheckbox">
-      <input
-        className="OWCheckbox-Itself"
-        type="checkbox"
-        id={id}
-        checked={checked}
-        onChange={() => setChecked(prevChecked => !prevChecked)}
-      />
-      <label
-        className="OWOption OWCheckbox-Label OWPadding-0-15-13 OWHeight-103"
-        htmlFor={id}
-      >
-        <div className="OWOption-Column">
-          <img
-            src={image}
-            className="OWCheckbox-Image OWMarginBottom-10"
-            alt={title}
-          />
-          <span className="OWCheckbox-Title">{title}</span>
-        </div>
-      </label>
-      <div className="OWCheckbox-Assurance">
-        <img src={_imgAssurance} alt={title} />
-      </div>
-    </div>
-  );
-}
-
 export function FrameStyle() {
-  const { shape } = useContext(SurveyContext);
+  const { shape, setShape } = useContext(SurveyContext);
   const switcher = useSwitcher();
 
   return (
@@ -150,6 +98,8 @@ export function FrameStyle() {
                   id={frameStyle.id}
                   title={frameStyle.title}
                   image={frameStyle.image}
+                  data={shape}
+                  setData={setShape}
                 />
               );
             })}

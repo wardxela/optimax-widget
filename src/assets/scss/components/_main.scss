@@ -24,6 +24,21 @@
   &-WideElement {
     align-self: stretch;
     overflow-x: auto;
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f7f8f9;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #cccccc;
+      border-radius: 16px;
+      &:active {
+        background-color: #aaaaaa;
+      }
+    }
   }
 
   &-Image {

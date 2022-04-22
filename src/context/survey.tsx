@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import {
   BlueLight,
   Brand,
@@ -81,4 +81,32 @@ export function SurveyProvider({ children }: SurveyProviderProps) {
       {children}
     </SurveyContext.Provider>
   );
+}
+
+export function useSurveyCleanUp() {
+  const {
+    setGender,
+    setEyeWearType,
+    setLensType,
+    setFrameSize,
+    setBlueLight,
+    setShade,
+    setFaceShape,
+    setFacialFeatures,
+    setShape,
+    setBrand,
+  } = useContext(SurveyContext);
+
+  return () => {
+    setGender(null);
+    setEyeWearType(null);
+    setLensType(null);
+    setFrameSize(null);
+    setBlueLight(null);
+    setShade(null);
+    setFaceShape(null);
+    setFacialFeatures(null);
+    setShape([]);
+    setBrand([]);
+  };
 }

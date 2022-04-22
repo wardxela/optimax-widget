@@ -1,7 +1,7 @@
+import { useContext } from 'react';
 import { containerId, dataSource } from 'config';
 import { SurveyContext } from 'context/survey';
 import { SurveyContextInterface } from 'context/types';
-import { useContext } from 'react';
 
 export function useDestinationUrl(): string {
   const survey = useContext(SurveyContext);

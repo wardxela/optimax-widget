@@ -8,7 +8,7 @@ import _imgLightShade from 'assets/img/shade/light-shade.png';
 import _imgTransitioningShade from 'assets/img/shade/transitioning-shade.png';
 
 export function KindOfProtection() {
-  const { eyeWearType, setBlueLight, setShade } = useContext(SurveyContext);
+  const { eyewear_type, setBlueLight, setShade } = useContext(SurveyContext);
   const switcher = useSwitcher();
 
   const produceHandlerForEyeglasses = (option: BlueLight) => {
@@ -25,7 +25,7 @@ export function KindOfProtection() {
     };
   };
 
-  if (eyeWearType === EyeWearTypeEnum.Sunglasses) {
+  if (eyewear_type === EyeWearTypeEnum.Sunglasses) {
     return (
       <section className="OWMain">
         <div className="OWMain-Container">

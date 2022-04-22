@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import {
   BlueLight,
   Brand,
@@ -16,15 +16,15 @@ import {
 
 export const SurveyContext = createContext<SurveyContextInterface>({
   gender: null,
-  eyeWearType: null,
-  lensType: null,
-  frameSize: null,
-  blueLight: null,
+  eyewear_type: null,
+  lenstype: null,
+  frame_size: null,
+  blue_light: null,
   shade: null,
-  faceShape: null,
-  facialFeatures: null,
+  face_shape: null,
+  facial_features: null,
   shape: [],
-  brands: [],
+  brand: [],
 
   setGender: () => {},
   setEyeWearType: () => {},
@@ -35,50 +35,35 @@ export const SurveyContext = createContext<SurveyContextInterface>({
   setFaceShape: () => {},
   setFacialFeatures: () => {},
   setShape: () => {},
-  setBrands: () => {},
+  setBrand: () => {},
 });
 
-export function SurveyProvider({ children, source }: SurveyProviderProps) {
+export function SurveyProvider({ children }: SurveyProviderProps) {
   const [gender, setGender] = useState<Gender>(null);
-  const [eyeWearType, setEyeWearType] = useState<EyeWearType>(null);
-  const [lensType, setLensType] = useState<LensType>(null);
-  const [frameSize, setFrameSize] = useState<FrameSize>(null);
-  const [blueLight, setBlueLight] = useState<BlueLight>(null);
+  const [eyewear_type, setEyeWearType] = useState<EyeWearType>(null);
+  const [lenstype, setLensType] = useState<LensType>(null);
+  const [frame_size, setFrameSize] = useState<FrameSize>(null);
+  const [blue_light, setBlueLight] = useState<BlueLight>(null);
   const [shade, setShade] = useState<Shade>(null);
-  const [faceShape, setFaceShape] = useState<FaceShape>(null);
-  const [facialFeatures, setFacialFeatures] = useState<FacialFeatures>(null);
+  const [face_shape, setFaceShape] = useState<FaceShape>(null);
+  const [facial_features, setFacialFeatures] = useState<FacialFeatures>(null);
   const [shape, setShape] = useState<Shape>([]);
-  const [brands, setBrands] = useState<Brand>([]);
-
-  // only for tests
-
-  // useEffect(() => {
-  //   console.log(gender);
-  //   console.log(eyeWearType);
-  //   console.log(lensType);
-  //   console.log(frameSize);
-  //   console.log(blueLight);
-  //   console.log(shade);
-  //   console.log(faceShape);
-  //   console.log(facialFeatures);
-  //   console.log(shape);
-  //   console.log(brand);
-  // });
+  const [brand, setBrand] = useState<Brand>([]);
 
   return (
     <SurveyContext.Provider
       value={{
         // State
         gender,
-        eyeWearType,
-        lensType,
-        frameSize,
-        blueLight,
+        eyewear_type,
+        lenstype,
+        frame_size,
+        blue_light,
         shade,
-        faceShape,
-        facialFeatures,
+        face_shape,
+        facial_features,
         shape,
-        brands,
+        brand,
 
         // Setters
         setGender,
@@ -90,7 +75,7 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
         setFaceShape,
         setFacialFeatures,
         setShape,
-        setBrands,
+        setBrand,
       }}
     >
       {children}

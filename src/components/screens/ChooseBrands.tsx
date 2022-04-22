@@ -5,7 +5,7 @@ import { useSwitcher } from 'services/screens';
 import brandsData from 'data/brandsData';
 
 export function ChooseBrands() {
-  const { brands, setBrands } = useContext(SurveyContext);
+  const { brand, setBrand } = useContext(SurveyContext);
 
   const switcher = useSwitcher();
 
@@ -18,13 +18,13 @@ export function ChooseBrands() {
         <p className="OWMain-Tip OWAppear_1">You can pick more than one.</p>
         <div className="OWMain-WideElement OWMarginBottom-10">
           <div className="OWOptions OWOptions_Clear OWOptions_4-cols OWOptions_gap-14">
-            {brandsData.map(brand => {
+            {brandsData.map(curBrand => {
               return (
                 <CheckboxCard
-                  key={brand.id}
-                  data={brands}
-                  setData={setBrands}
-                  {...brand}
+                  key={curBrand.id}
+                  data={brand}
+                  setData={setBrand}
+                  {...curBrand}
                 />
               );
             })}
@@ -32,7 +32,7 @@ export function ChooseBrands() {
         </div>
         <button
           className="OWMain-Button OWMain-Button_AltFont OWAppear_2"
-          disabled={brands.length === 0}
+          disabled={brand.length === 0}
           onClick={() => switcher(1)}
         >
           Continue

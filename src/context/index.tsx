@@ -4,12 +4,11 @@ import { SurveyProvider } from './survey';
 
 interface StateProps {
   children: ReactNode;
-  source: string;
 }
 
-export function State({ children, source }: StateProps) {
+export function State({ children }: StateProps) {
   return (
-    <SurveyProvider source={source}>
+    <SurveyProvider>
       <ScreenProvider>{children}</ScreenProvider>
     </SurveyProvider>
   );

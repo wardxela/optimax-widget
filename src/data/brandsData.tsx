@@ -13,7 +13,7 @@ import _imgBurberry from 'assets/img/brands/burberry.png';
 
 const brandsData = [
   {
-    id: 'ray_Ban',
+    id: 'ray_ban',
     image: _imgRayDan,
   },
   {

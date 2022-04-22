@@ -1,6 +1,9 @@
+import { useDestinationUrl } from 'hooks/useDestinationUrl';
 import _imgGift from 'assets/img/icons/gift.png';
 
 export function FinalScreen() {
+  const url = useDestinationUrl();
+
   return (
     <section className="OWMain OWMain_Gradient">
       <div className="OWMain-Container">
@@ -17,7 +20,12 @@ export function FinalScreen() {
         <p className="OWMain-Description OWMain-Description_Alt OWMarginBottom-50 OWAppear_2">
           Send the results to your email to receive special discounts.
         </p>
-        <button className="OWMain-Button OWAppear_3">Send</button>
+        <button
+          className="OWMain-Button OWAppear_3"
+          onClick={() => console.log(`URL: ${url}`)}
+        >
+          Send
+        </button>
         <p className="OWMain-Agreement OWWidth-286 OWMarginTop-Auto OWAppear_4">
           By clicking ‘Send’ you agree to our Terms of Use & Privacy Policy and
           receiving promotion emails

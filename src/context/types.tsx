@@ -22,15 +22,15 @@ export type Brand = string[];
 
 export interface SurveyContextInterface {
   gender: Gender;
-  eyeWearType: EyeWearType;
-  lensType: LensType;
-  frameSize: FrameSize;
-  blueLight: BlueLight;
+  eyewear_type: EyeWearType;
+  lenstype: LensType;
+  frame_size: FrameSize;
+  blue_light: BlueLight;
   shade: Shade;
-  faceShape: FaceShape;
-  facialFeatures: FacialFeatures;
+  face_shape: FaceShape;
+  facial_features: FacialFeatures;
   shape: Shape;
-  brands: Brand;
+  brand: Brand;
 
   setGender: Dispatch<SetStateAction<Gender>>;
   setEyeWearType: Dispatch<SetStateAction<EyeWearType>>;
@@ -41,10 +41,9 @@ export interface SurveyContextInterface {
   setFaceShape: Dispatch<SetStateAction<FaceShape>>;
   setFacialFeatures: Dispatch<SetStateAction<FacialFeatures>>;
   setShape: Dispatch<SetStateAction<Shape>>;
-  setBrands: Dispatch<SetStateAction<Brand>>;
+  setBrand: Dispatch<SetStateAction<Brand>>;
 }
 
 export interface SurveyProviderProps {
   children: ReactNode;
-  source: string;
 }

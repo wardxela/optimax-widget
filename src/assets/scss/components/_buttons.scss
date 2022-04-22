@@ -1,6 +1,8 @@
 @use 'sass:math';
+@use '../mixins' as *;
 
 .OWOption {
+  box-sizing: border-box;
   display: grid;
   place-items: center;
   background: #ffffff;
@@ -10,7 +12,15 @@
   cursor: pointer;
   padding: 0;
   width: min(274px, 100%);
-  box-sizing: border-box;
+
+  &:hover {
+    @include scaleOnHover();
+  }
+
+  &:active {
+    @include scaleOnActive();
+    opacity: 0.7 !important;
+  }
 
   &_Wider {
     width: min(300px, 100%);
@@ -134,9 +144,6 @@
 
 .OWCheckbox {
   position: relative;
-
-  &-Label {
-  }
 
   &-Title {
     font-family: var(--p-font);

@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .OWMain {
   background-color: #f7f8f9;
   text-align: center;
@@ -102,8 +104,7 @@
     padding: 13px 26px;
     min-width: 180px;
     user-select: none;
-
-    transition: 0.2s ease;
+    cursor: pointer;
 
     &_AltFont {
       font-family: var(--p-font);
@@ -115,7 +116,12 @@
     }
 
     &:hover {
-      cursor: pointer;
+      @include shadowOnHover;
+      @include scaleOnHover(1.5);
+    }
+
+    &:active {
+      @include scaleOnActive(1.5);
     }
   }
 
@@ -130,9 +136,12 @@
     background: transparent;
     margin-top: auto;
     cursor: pointer;
-    transition: 0.3s ease;
     &:hover {
       color: #67818f;
+      @include scaleOnHover();
+    }
+    &:active {
+      @include scaleOnActive();
     }
   }
 }

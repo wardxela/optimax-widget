@@ -1,0 +1,11 @@
+@mixin shadowOnHover {
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+@mixin scaleOnHover($coefficient: 1) {
+  transform: scale(1 + $coefficient * 0.02) !important;
+}
+
+@mixin scaleOnActive($coefficient: 1) {
+  transform: scale(1 - $coefficient * 0.02) !important;
+}

@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
-import { App } from 'App';
+import { Header, Main } from 'components';
+import { State } from 'context';
 import 'assets/scss/index.scss';
 
 const container = document.getElementById('glasses-quiz-widget');
@@ -8,6 +9,9 @@ if (container instanceof HTMLElement) {
   const root = createRoot(container);
 
   root.render(
-    <App source={container.dataset.source ?? 'https://example.com/'} />
+    <State source={container.dataset.source ?? 'https://example.com/'}>
+      <Header />
+      <Main />
+    </State>
   );
 }

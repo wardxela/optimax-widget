@@ -36,7 +36,6 @@ export const SurveyContext = createContext<SurveyContextInterface>({
   setFacialFeatures: () => {},
   setShape: () => {},
   setBrands: () => {},
-  getDestinationURL: () => '',
 });
 
 export function SurveyProvider({ children, source }: SurveyProviderProps) {
@@ -66,15 +65,6 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
   //   console.log(brand);
   // });
 
-  const getDestinationURL = () => {
-    try {
-      const url = new URL(source);
-      return url.toString();
-    } catch (e) {
-      return 'error';
-    }
-  };
-
   return (
     <SurveyContext.Provider
       value={{
@@ -101,8 +91,6 @@ export function SurveyProvider({ children, source }: SurveyProviderProps) {
         setFacialFeatures,
         setShape,
         setBrands,
-
-        getDestinationURL,
       }}
     >
       {children}

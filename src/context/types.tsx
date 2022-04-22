@@ -42,8 +42,6 @@ export interface SurveyContextInterface {
   setFacialFeatures: Dispatch<SetStateAction<FacialFeatures>>;
   setShape: Dispatch<SetStateAction<Shape>>;
   setBrands: Dispatch<SetStateAction<Brand>>;
-
-  getDestinationURL: () => string;
 }
 
 export interface SurveyProviderProps {

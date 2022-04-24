@@ -22,12 +22,15 @@ export function FrameSize() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWWidth-210 OWMarginTop-25 OWMarginBottom-40">
           What’s your current frame size?
         </h2>
-        <img
-          src={_imgSizes}
-          alt="Sizes"
-          className="OWMain-Image OWWidth-318 OWMarginBottom-35 OWAppear_0"
-        />
-        <div className="OWOptions OWOptions_gap-12">
+        <div className="OWMarginBottom-35 OWAppear_0 OWWidth-318">
+          <img
+            draggable="false"
+            src={_imgSizes}
+            alt="Sizes"
+            className="OWMain-Image"
+          />
+        </div>
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-12">
           <button
             className="OWOption OWOption_Widest OWHeight-56 OWAppear_1"
             onClick={produceHandler(FrameSizeEnum.Small)}

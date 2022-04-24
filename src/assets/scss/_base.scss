@@ -1,7 +1,10 @@
 #glasses-quiz-widget {
   --p-font: 'Open Sans', sans-serif;
   --s-font: 'Roboto', sans-serif;
-  max-width: 375px;
+  max-width: 706px;
+  height: max(572px, 100vh);
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   overflow: hidden;
 }

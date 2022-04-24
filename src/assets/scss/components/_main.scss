@@ -3,7 +3,7 @@
 .OWMain {
   background-color: #f7f8f9;
   text-align: center;
-
+  flex: 1 1 auto;
   &_Gradient {
     background-image: linear-gradient(
       180deg,
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 572px;
+    height: 100%;
     padding: 24px;
     box-sizing: border-box;
   }

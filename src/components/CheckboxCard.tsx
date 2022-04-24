@@ -51,6 +51,7 @@ export function CheckboxCard({
             className={`OWCheckbox-Image${
               hasTitle ? ' OWMarginBottom-10' : ''
             }`}
+            draggable="false"
             alt={hasTitle ? title : id}
           />
           {hasTitle && <span className="OWCheckbox-Title">{title}</span>}

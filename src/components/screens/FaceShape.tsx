@@ -59,11 +59,13 @@ export function FaceShape() {
                 {gender === null ? (
                   <div className="OWOption-FaceImages">
                     <img
+                      draggable="false"
                       src={_imgLongMaleFace}
                       alt="Long face"
                       className="OWOption-Image"
                     />
                     <img
+                      draggable="false"
                       src={_imgLongFemaleFace}
                       alt="Long face"
                       className="OWOption-Image"
@@ -71,6 +73,7 @@ export function FaceShape() {
                   </div>
                 ) : (
                   <img
+                    draggable="false"
                     src={
                       gender === GenderEnum.Men
                         ? _imgLongMaleFace
@@ -93,11 +96,13 @@ export function FaceShape() {
                 {gender === null ? (
                   <div className="OWOption-FaceImages">
                     <img
+                      draggable="false"
                       src={_imgRoundMaleFace}
                       alt="Round face"
                       className="OWOption-Image"
                     />
                     <img
+                      draggable="false"
                       src={_imgRoundFemaleFace}
                       alt="Round face"
                       className="OWOption-Image"
@@ -105,6 +110,7 @@ export function FaceShape() {
                   </div>
                 ) : (
                   <img
+                    draggable="false"
                     src={
                       gender === GenderEnum.Men
                         ? _imgRoundMaleFace
@@ -127,11 +133,13 @@ export function FaceShape() {
                 {gender === null ? (
                   <div className="OWOption-FaceImages">
                     <img
+                      draggable="false"
                       src={_imgInBetweenMaleFace}
                       alt="Long face"
                       className="OWOption-Image"
                     />
                     <img
+                      draggable="false"
                       src={_imgInBetweenFemaleFace}
                       alt="Long face"
                       className="OWOption-Image"
@@ -139,6 +147,7 @@ export function FaceShape() {
                   </div>
                 ) : (
                   <img
+                    draggable="false"
                     src={
                       gender === GenderEnum.Men
                         ? _imgInBetweenMaleFace

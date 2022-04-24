@@ -15,7 +15,7 @@ export function SuggestVisionCorrection() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
           Do you need vision correction?
         </h2>
-        <div className="OWOptions OWOptions_gap-14">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-14">
           <button
             className="OWOption OWHeight-117 OWAppear_1"
             onClick={() => switcher(1)}

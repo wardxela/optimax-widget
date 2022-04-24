@@ -21,7 +21,7 @@ export function VisionCorrection() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
           What do you need your glasses for?
         </h2>
-        <div className="OWOptions OWOptions_gap-14">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-14">
           <button
             className="OWOption OWOption_Wider OWHeight-84 OWAppear_1"
             onClick={produceHandler(LensTypeEnum.NearVision)}

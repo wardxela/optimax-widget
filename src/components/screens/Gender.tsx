@@ -24,7 +24,7 @@ export function Gender() {
         <h2 className="OWMain-Title-2 OWMarginTop-25 OWMarginBottom-30 OWAppear_0">
           You are looking for
         </h2>
-        <div className="OWOptions OWOptions_gap-14">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-14">
           <button
             className="OWOption OWHeight-138 OWPadding-25 OWAppear_1"
             onClick={produceHandler(GenderEnum.Women)}
@@ -34,6 +34,7 @@ export function Gender() {
                 src={_imgWoman}
                 alt="Woman"
                 className="OWOption-Image OWMarginBottom-15"
+                draggable="false"
               />
               <span className="OWOption-Desc">Women's Styles</span>
             </div>
@@ -47,6 +48,7 @@ export function Gender() {
                 src={_imgMan}
                 alt="Woman"
                 className="OWOption-Image OWMarginBottom-15"
+                draggable="false"
               />
               <span className="OWOption-Desc">Men's Styles</span>
             </div>

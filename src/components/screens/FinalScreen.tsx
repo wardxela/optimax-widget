@@ -12,6 +12,7 @@ export function FinalScreen() {
             src={_imgGift}
             alt="Gift"
             className="OWIcon-Image OWIcon-Image_Gift"
+            draggable="false"
           />
         </div>
         <h2 className="OWMain-Title-3 OWMarginBottom-10 OWWidth-318 OWAppear_1">

@@ -11,6 +11,7 @@ export function Greeting() {
           src={_imgGreeting}
           alt="Greeting!"
           className="OWMain-Image OWAppear_0 OWMarginTop-40 OWMarginBottom-45"
+          draggable="false"
         />
         <h2 className="OWMain-Title OWMarginBottom-20 OWAppear_0">
           Let’s find your perfect pair!

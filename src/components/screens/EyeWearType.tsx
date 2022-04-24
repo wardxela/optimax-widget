@@ -25,7 +25,7 @@ export function EyeWearType() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30 OWWidth-243">
           What type of glasses are you looking for?
         </h2>
-        <div className="OWOptions OWOptions_gap-14">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-14">
           <button
             className="OWOption OWHeight-138 OWPadding-25 OWAppear_1"
             onClick={produceHandler(EyeWearTypeEnum.Eyeglasses)}

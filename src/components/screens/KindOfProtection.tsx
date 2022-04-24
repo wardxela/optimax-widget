@@ -29,7 +29,7 @@ export function KindOfProtection() {
     return (
       <section className="OWMain">
         <div className="OWMain-Container">
-          <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
+          <h2 className="OWMain-Title-2 OWWidth-318 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
             When you’re out and about, which shade of lenses do you prefer?
           </h2>
           <div className="OWOptions OWOptions_gap-16">
@@ -43,6 +43,7 @@ export function KindOfProtection() {
                     src={_imgDarkShade}
                     alt="Dark Shade"
                     className="OWOption-Image"
+                    draggable="false"
                   />
                 </div>
                 <span className="OWOption-Desc OWOption-Desc_Small">
@@ -60,6 +61,7 @@ export function KindOfProtection() {
                     src={_imgLightShade}
                     alt="Light Shade"
                     className="OWOption-Image"
+                    draggable="false"
                   />
                 </div>
                 <span className="OWOption-Desc OWOption-Desc_Small">
@@ -79,6 +81,7 @@ export function KindOfProtection() {
                     src={_imgTransitioningShade}
                     alt="Transitioning Shade"
                     className="OWOption-Image"
+                    draggable="false"
                   />
                 </div>
                 <span className="OWOption-Desc OWOption-Desc_Small">
@@ -95,7 +98,7 @@ export function KindOfProtection() {
   return (
     <section className="OWMain">
       <div className="OWMain-Container">
-        <h2 className="OWMain-Title-2 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
+        <h2 className="OWMain-Title-2 OWWidth-330 OWAppear_0 OWMarginTop-25 OWMarginBottom-30">
           Would you like to protect your eyes from light emanating from screens?
         </h2>
         <div className="OWOptions OWOptions_gap-14">

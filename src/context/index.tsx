@@ -6,7 +6,7 @@ interface StateProps {
   children: ReactNode;
 }
 
-export function State({ children }: StateProps) {
+export function StateProvider({ children }: StateProps) {
   return (
     <SurveyProvider>
       <ScreenProvider>{children}</ScreenProvider>

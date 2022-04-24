@@ -4,16 +4,11 @@
       margin-top: auto;
     }
 
-    &-40 {
-      margin-top: 40px;
-    }
-
-    &-25 {
-      margin-top: 25px;
-    }
-
-    &-30 {
-      margin-top: 25px;
+    @for $i from 0 through 4 {
+      $value: 25 + 5 * $i;
+      &-#{$value} {
+        margin-top: $value + px;
+      }
     }
 
     &-100 {
@@ -38,13 +33,6 @@
 
   &-25 {
     padding: 25px;
-  }
-  &-30 {
-    padding: 30px;
-  }
-
-  &-36 {
-    padding: 36px;
   }
 
   &-0-17 {

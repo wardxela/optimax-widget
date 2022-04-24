@@ -17,7 +17,7 @@ export function FrameStyle() {
         <p className="OWMain-Tip OWMarginBottom-10 OWAppear_1">
           You can pick more than one.
         </p>
-        <div className="OWMain-WideElement OWMarginBottom-10">
+        <div className="OWMain-WideElement OWAppear_2 OWMarginBottom-10">
           <div className="OWOptions OWOptions_Clear OWOptions_4-cols OWOptions_gap-14">
             {frameStylesData.map(frameStyle => {
               return (
@@ -32,7 +32,7 @@ export function FrameStyle() {
           </div>
         </div>
         <button
-          className="OWMain-Button OWMain-Button_AltFont OWMarginBottom-25 OWAppear_2"
+          className="OWMain-Button OWMain-Button_AltFont OWMarginBottom-25 OWAppear_3"
           disabled={shape.length === 0}
           onClick={() => switcher(1)}
         >

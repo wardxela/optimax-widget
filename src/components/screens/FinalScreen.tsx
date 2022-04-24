@@ -5,7 +5,7 @@ export function FinalScreen() {
   const url = useDestinationUrl();
 
   return (
-    <section className="OWMain OWMain_Gradient">
+    <section className="OWMain">
       <div className="OWMain-Container">
         <div className="OWIcon OWMarginTop-40 OWMarginBottom-30 OWAppear_0">
           <img

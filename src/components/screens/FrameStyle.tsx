@@ -32,7 +32,7 @@ export function FrameStyle() {
           </div>
         </div>
         <button
-          className="OWMain-Button OWMain-Button_AltFont OWAppear_2"
+          className="OWMain-Button OWMain-Button_AltFont OWMarginBottom-25 OWAppear_2"
           disabled={shape.length === 0}
           onClick={() => switcher(1)}
         >

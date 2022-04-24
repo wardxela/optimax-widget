@@ -27,7 +27,7 @@ export function FrameSizeAlt() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWWidth-210 OWMarginTop-25 OWMarginBottom-30">
           How wide would you say your face is?
         </h2>
-        <div className="OWOptions OWOptions_gap-12">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-12">
           <button
             className="OWOption OWOption_Wider OWHeight-84 OWAppear_1"
             onClick={produceHandler(FrameSizeEnum.WiderThanAverage)}

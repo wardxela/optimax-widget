@@ -7,7 +7,7 @@ import _imgLogo from 'assets/img/Optimax.png';
 import { useSurveyCleanUp } from 'context/survey';
 
 const getProgress = (current: number, max: number): string => {
-  return `${(current * 100) / max - 100}%`;
+  return `calc(${(current * 100) / max - 100}% - 1px)`;
 };
 
 export function Header() {

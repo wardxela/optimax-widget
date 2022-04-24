@@ -22,7 +22,7 @@ export function FinalScreen() {
           Send the results to your email to receive special discounts.
         </p>
         <button
-          className="OWMain-Button OWAppear_3"
+          className="OWMain-Button OWMarginBottom-30 OWAppear_3"
           onClick={() => console.log(`URL: ${url}`)}
         >
           Send

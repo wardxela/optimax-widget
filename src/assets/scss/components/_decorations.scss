@@ -6,7 +6,7 @@
   border-radius: 50%;
   background: #f7f8f9;
   box-shadow: -9px -9px 16px #ffffff, 9px 9px 16px rgba(163, 177, 198, 0.325148);
-
+  flex-shrink: 0;
   &-Image {
     display: block;
     max-width: 100%;

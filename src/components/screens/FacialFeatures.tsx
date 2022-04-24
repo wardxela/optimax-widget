@@ -21,7 +21,7 @@ export function FacialFeatures() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWWidth-243 OWMarginTop-25 OWMarginBottom-30">
           How would you define your facial features?
         </h2>
-        <div className="OWOptions OWOptions_gap-14">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-14">
           <button
             className="OWOption OWOption_Widest OWHeight-97 OWAppear_1"
             onClick={produceHandler(FacialFeaturesEnum.Sharp)}

@@ -4,6 +4,8 @@
   background-color: #f7f8f9;
   text-align: center;
   flex: 1 1 auto;
+  overflow-y: auto;
+
   &_Gradient {
     background-image: linear-gradient(
       180deg,
@@ -18,14 +20,32 @@
     align-items: center;
     height: 100%;
     padding: 24px;
+    overflow-y: auto;
     box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f7f8f9;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #cccccc;
+      border-radius: 16px;
+      &:active {
+        background-color: #aaaaaa;
+      }
+    }
   }
 
   &-WideElement {
     align-self: stretch;
     overflow-x: auto;
+    flex-shrink: 0;
     &::-webkit-scrollbar {
       height: 8px;
+      width: 6px;
     }
 
     &::-webkit-scrollbar-track {

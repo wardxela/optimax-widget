@@ -49,7 +49,7 @@ export function FaceShape() {
         <h2 className="OWMain-Title-2 OWAppear_0 OWWidth-243 OWMarginTop-25 OWMarginBottom-40">
           Every face shape has a perfect fit. What’s yours?
         </h2>
-        <div className="OWOptions OWOptions_gap-14">
+        <div className="OWOptions OWMarginBottom-30 OWOptions_gap-14">
           <button
             className={`OWOption OWOption_Widest OWHeight-89 OWAppear_1 ${padding}`}
             onClick={produceHandler(FaceShapeEnum.Long)}
